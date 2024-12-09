@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "486595500757",
+    "firebase_url": "https://wia2007zerohunger-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "wia2007zerohunger",
+    "storage_bucket": "wia2007zerohunger.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:486595500757:android:e53187e1a560749731205c",
+        "android_client_info": {
+          "package_name": "com.example.wia2007_zerohunger"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYHfnBEi65sD-uHiZwG5gW42pLulnwu8I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

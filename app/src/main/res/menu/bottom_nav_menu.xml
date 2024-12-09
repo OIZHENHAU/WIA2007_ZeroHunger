@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="?android:attr/actionBarSize">
+
+    <item
+        android:id="@+id/education_menu"
+        android:title="Education"
+        android:icon="@drawable/cast_for_education"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/collaboration_menu"
+        android:title="Collaboration"
+        android:icon="@drawable/collaboration_exchange"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/assistance_menu"
+        android:title="Assistance"
+        android:icon="@drawable/assistance"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/manage_menu"
+        android:title="Manage"
+        android:icon="@drawable/manage_accounts"
+        app:showAsAction="always"/>
+
+
+</menu>
