@@ -33,49 +33,101 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 
-    <ImageView
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+        android:background="@color/black">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/farmer_logo"/>
+
+        <TextView
+            android:id="@+id/textViewUserName"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Welcome"
+            android:textColor="@color/purple"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </FrameLayout>
+
+
+    <FrameLayout
         android:layout_width="180dp"
-        android:layout_height="180dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="72dp"
-        android:src="@drawable/main_menu_logo"
+        android:layout_height="200dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="440dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintCircleRadius="10dp"
+        android:background="@drawable/your_rounded_shape">
 
-    <ImageView
-        android:layout_width="91dp"
-        android:layout_height="84dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="72dp"
-        android:src="@drawable/leaaf"
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/weather_img"
+            android:contentDescription="@string/weather_info"/>
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:text="@string/weather_info"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/black"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="180dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="212dp"
+        android:layout_marginTop="440dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/your_rounded_shape">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="156dp"
-        android:text="Main Menu"
-        android:textColor="#673AB7"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/soil_analysis_img"
+            android:contentDescription="@string/soil_info"/>
 
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:text="@string/soil_info"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textColor="@color/black"/>
+
+    </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        app:labelVisibilityMode="labeled"
         android:background="@color/purple"
-        app:itemTextColor="@color/white"
         app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav_menu"/>
+        app:menu="@menu/bottom_nav_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

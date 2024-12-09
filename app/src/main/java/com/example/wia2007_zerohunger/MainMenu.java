@@ -45,7 +45,7 @@ public class MainMenu extends AppCompatActivity {
         Intent intent = getIntent();
         String nickNameString = intent.getStringExtra("nickName");
 
-        nickName = findViewById(R.id.textView);
+        nickName = findViewById(R.id.textViewUserName);
 
         nickName.setText("Welcome, " + nickNameString);
 
