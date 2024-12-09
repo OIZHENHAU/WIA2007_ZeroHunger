@@ -63,7 +63,6 @@ public class MainMenu extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenu.this, MainWeatherActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
 
