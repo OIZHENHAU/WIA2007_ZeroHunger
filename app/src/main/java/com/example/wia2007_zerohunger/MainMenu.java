@@ -25,6 +25,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.wia2007_zerohunger.Part1.MainActivityP1;
 import com.example.wia2007_zerohunger.Part1.view.MainWeatherActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -34,7 +35,7 @@ public class MainMenu extends AppCompatActivity {
     TextView nickName;
     Toolbar toolbar;
 
-    ImageButton weatherImageButton, soilImageButton;
+    Button agricultureSupportButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,18 +51,19 @@ public class MainMenu extends AppCompatActivity {
         String nickNameString = intent.getStringExtra("nickName");
 
         nickName = findViewById(R.id.textViewUserName);
-        weatherImageButton = findViewById(R.id.imageButtonWeatherInfo);
-        soilImageButton = findViewById(R.id.imageButtonSoilInfo);
 
         nickName.setText("Welcome, " + nickNameString);
+
+        agricultureSupportButton = findViewById(R.id.agriculturalSupportButton);
 
         toolbar = (Toolbar) findViewById(R.id.mainMenuToolbar);
         setSupportActionBar(toolbar);
 
-        weatherImageButton.setOnClickListener(new View.OnClickListener() {
+        agricultureSupportButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainMenu.this, MainWeatherActivity.class);
+                Intent intent = new Intent(MainMenu.this, MainActivityP1.class);
+                intent.putExtra("nickName", nickNameString);
                 startActivity(intent);
             }
         });

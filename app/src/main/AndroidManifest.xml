@@ -18,6 +18,9 @@
         android:theme="@style/Theme.WIA2007_ZeroHunger"
         tools:targetApi="31">
         <activity
+            android:name=".Part1.MainActivityP1"
+            android:exported="false" />
+        <activity
             android:name=".Part1.soil_analysis.MainSoilActivity"
             android:exported="false" />
         <activity
