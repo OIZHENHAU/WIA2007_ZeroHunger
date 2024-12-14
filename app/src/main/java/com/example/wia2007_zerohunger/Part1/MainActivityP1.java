@@ -23,6 +23,8 @@ public class MainActivityP1 extends AppCompatActivity {
     ImageButton weatherInfo;
     ImageButton soilInfo;
 
+    //hahahahaha
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
