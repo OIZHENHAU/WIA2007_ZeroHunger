@@ -69,7 +69,7 @@ public class WeatherNext4Activity extends AppCompatActivity {
     }
 
     private void generateWeatherForecastNext4DaysList() {
-        int fourDays = 5;
+        int fourDays = 6;
 
         for(int i = 1; i <= fourDays; i++) {
             int randomIndex = random.nextInt(weatherIconCodeList.size());
