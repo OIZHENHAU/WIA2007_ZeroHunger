@@ -11,6 +11,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.wia2007_zerohunger.MainMenu;
 import com.example.wia2007_zerohunger.Part1.soil_analysis.MainSoilActivity;
 import com.example.wia2007_zerohunger.Part1.view.MainWeatherActivity;
 import com.example.wia2007_zerohunger.R;
@@ -36,7 +37,8 @@ public class MainActivityP1 extends AppCompatActivity {
         mainBinding.textViewMainP1.setText("Welcome, " + nickname);
 
         mainBinding.mainP1Toolbar.setNavigationOnClickListener(v -> {
-            finish();
+            Intent intentMainMenu = new Intent(MainActivityP1.this, MainMenu.class);
+            startActivity(intentMainMenu);
         });
 
         mainBinding.imageButtonWeatherInfoP1.setOnClickListener(new View.OnClickListener() {
