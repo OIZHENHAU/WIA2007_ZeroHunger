@@ -3,6 +3,7 @@ package com.example.wia2007_zerohunger.Part1.soil_analysis;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -52,6 +53,12 @@ public class CropResultActivity extends AppCompatActivity {
         generateCropResultList();
 
         Log.d("Array Result", String.valueOf(cropResultList.size()));
+
+        if (cropResultList.size() == 0) {
+            Toast.makeText(CropResultActivity.this, "No crop recommendation found", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(CropResultActivity.this, "Crop recommendation found", Toast.LENGTH_SHORT).show();
+        }
 
         cropResultAdapter = new CropResultAdapter(cropResultList, CropResultActivity.this);
         recyclerView.setAdapter(cropResultAdapter);

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -59,9 +60,19 @@ public class SoilAnalysisActivity extends AppCompatActivity {
         soilSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SoilAnalysisActivity.this, CropResultActivity.class);
-                //intent.putExtra("cropResultList", (ArrayList<String>) result);
-                startActivity(intent);
+
+                if (soilNitrogenEditText.getText().toString().isEmpty() || soilPhosphorusEditText.getText().toString().isEmpty() ||
+                        soilPotassiumEditText.getText().toString().isEmpty() || soilPHValueEditText.getText().toString().isEmpty() ||
+                        soilTemperatureEditText.getText().toString().isEmpty() || soilHumidityEditText.getText().toString().isEmpty() ||
+                        soilRainfallEditText.getText().toString().isEmpty())  {
+                    Toast.makeText(SoilAnalysisActivity.this, "Please fill all the fields", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    Intent intent = new Intent(SoilAnalysisActivity.this, CropResultActivity.class);
+                    //intent.putExtra("cropResultList", (ArrayList<String>) result);
+                    startActivity(intent);
+                }
+
             }
         });
     }
