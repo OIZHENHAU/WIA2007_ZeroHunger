@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:navigationIcon="@drawable/arrow_back"
-            app:title="4-Days Forecast"
+            app:title="6-Days Forecast"
             app:titleTextColor="@color/white">
 
         </com.google.android.material.appbar.MaterialToolbar>
