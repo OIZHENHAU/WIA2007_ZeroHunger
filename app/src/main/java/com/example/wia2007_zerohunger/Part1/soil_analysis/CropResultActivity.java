@@ -17,7 +17,9 @@ import com.example.wia2007_zerohunger.R;
 import com.example.wia2007_zerohunger.databinding.ActivityCropResultBinding;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 public class CropResultActivity extends AppCompatActivity {
 
@@ -46,6 +48,9 @@ public class CropResultActivity extends AppCompatActivity {
         ArrayList<String> cropDataList = intent.getStringArrayListExtra("cropDataList");
         Log.d("Crop Data In Crop Result", String.valueOf(cropDataList.size()));
 
+        Set<String> setWithoutDuplicates = new HashSet<>(cropDataList);
+        ArrayList<String> cropDataListWithoutDuplicates = new ArrayList<>(setWithoutDuplicates);
+
         generateCropLabelList();
         generatePlantingTimeList();
         generateManagementTipsList();
@@ -54,7 +59,7 @@ public class CropResultActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.cropResultRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(CropResultActivity.this));
 
-        generateCropResultList(cropDataList);
+        generateCropResultList(cropDataListWithoutDuplicates);
 
         Log.d("Array Crop Result", String.valueOf(cropResultList.size()));
 
