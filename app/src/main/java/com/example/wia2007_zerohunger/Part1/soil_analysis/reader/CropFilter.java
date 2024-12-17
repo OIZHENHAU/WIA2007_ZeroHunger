@@ -11,7 +11,7 @@ public class CropFilter {
         List<String> result = new ArrayList<>();
 
         for(CropData cropData : cropDataList) {
-            if (cropData.getN() <= N && cropData.getP() <= P && cropData.getK() <= K && cropData.getTemperature() <= temperature && cropData.getHumidity() <= humidity && cropData.getPh() < ph && cropData.getRainfall() <= rainfall) {
+            if (cropData.getN() <= N && cropData.getP() <= P && cropData.getK() <= K && cropData.getTemperature() <= temperature && cropData.getHumidity() <= humidity && cropData.getPh() <= ph && cropData.getRainfall() <= rainfall) {
                 result.add(cropData.getLabel());
             }
         }

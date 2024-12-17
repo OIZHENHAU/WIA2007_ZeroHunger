@@ -69,8 +69,10 @@ public class CropRecommendationActivity extends AppCompatActivity {
                     Toast.makeText(CropRecommendationActivity.this, "Please fill all the fields", Toast.LENGTH_SHORT).show();
 
                 } else {
+                    generateCropResultList();
                     Intent intent = new Intent(CropRecommendationActivity.this, CropResultActivity.class);
                     //intent.putExtra("cropResultList", (ArrayList<String>) result);
+                    intent.putStringArrayListExtra("cropDataList", (ArrayList<String>) result);
                     startActivity(intent);
                 }
             }

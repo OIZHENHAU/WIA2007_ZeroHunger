@@ -2,6 +2,7 @@ package com.example.wia2007_zerohunger.Part1.soil_analysis;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,6 +46,7 @@ public class SoilAnalysisActivity extends AppCompatActivity {
         soilPHValueEditText = findViewById(R.id.soilPHValueEditText);
         soilTemperatureEditText = findViewById(R.id.soilTemperatureEditText);
         soilHumidityEditText = findViewById(R.id.soilHumidityEditText);
+        soilRainfallEditText = findViewById(R.id.soilRainfallEditText);
 
         soilBackButton = findViewById(R.id.soilBackButton);
         soilSubmitButton = findViewById(R.id.soilSubmitButton);
@@ -60,16 +62,21 @@ public class SoilAnalysisActivity extends AppCompatActivity {
         soilSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("On Clicked", "Submit button clicked");
 
                 if (soilNitrogenEditText.getText().toString().isEmpty() || soilPhosphorusEditText.getText().toString().isEmpty() ||
                         soilPotassiumEditText.getText().toString().isEmpty() || soilPHValueEditText.getText().toString().isEmpty() ||
                         soilTemperatureEditText.getText().toString().isEmpty() || soilHumidityEditText.getText().toString().isEmpty() ||
                         soilRainfallEditText.getText().toString().isEmpty())  {
+                    Log.d("Soil Analysis", "Submit button clicked case 1");
                     Toast.makeText(SoilAnalysisActivity.this, "Please fill all the fields", Toast.LENGTH_SHORT).show();
 
                 } else {
+                    Log.d("Soil Analysis", "Submit button clicked case 2");
+                    generateCropResultList();
+                    Log.d("crop Data List After filter", String.valueOf(result.size()));
                     Intent intent = new Intent(SoilAnalysisActivity.this, CropResultActivity.class);
-                    //intent.putExtra("cropResultList", (ArrayList<String>) result);
+                    intent.putStringArrayListExtra("cropDataList", (ArrayList<String>) result);
                     startActivity(intent);
                 }
 
@@ -81,6 +88,7 @@ public class SoilAnalysisActivity extends AppCompatActivity {
         TextFileCropReader textFileCropReader = new TextFileCropReader();
         List<CropData> cropDataList = textFileCropReader.readTextFile(this, R.raw.crop_recommendation);
 
+        Log.d("crop Data List before filter", String.valueOf(cropDataList.size()));
         CropFilter cropFilter = new CropFilter();
         result = cropFilter.getLabelForConditions(cropDataList,
                 Double.parseDouble(soilNitrogenEditText.getText().toString()),

@@ -1,6 +1,7 @@
 package com.example.wia2007_zerohunger.Part1.soil_analysis.reader;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.example.wia2007_zerohunger.Part1.soil_analysis.CropData;
 
@@ -13,15 +14,19 @@ import java.util.List;
 public class TextFileCropReader {
     public List<CropData> readTextFile(Context context, int resourceId) {
         List<CropData> cropDataList = new ArrayList<>();
+        Log.d("Resources ID: ", String.valueOf(resourceId));
 
         try {
             InputStream inputStream = context.getResources().openRawResource(resourceId);
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
             String line;
+            //Log.d("The first column of the text: ", reader.readLine());
             reader.readLine();
 
             while ((line = reader.readLine()) != null) {
-                String[] values = line.split(" ");
+                //Log.d("Line", line);
+                String[] values = line.split("\t");
+                //Log.d("Value at 0 index", values[0]);
                 int N = Integer.parseInt(values[0]);
                 int P = Integer.parseInt(values[1]);
                 int K = Integer.parseInt(values[2]);

@@ -211,6 +211,7 @@ public class MainActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Intent intent = new Intent(MainActivity.this, MainMenu.class);
                             intent.putExtra("nickName", currentUserAccount.getName());
+                            intent.putExtra("email", currentUserAccount.getEmail());
                             startActivity(intent);
                             finish();
 

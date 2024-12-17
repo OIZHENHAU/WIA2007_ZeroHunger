@@ -42,6 +42,10 @@ public class CropResultActivity extends AppCompatActivity {
             finish();
         });
 
+        Intent intent = getIntent();
+        ArrayList<String> cropDataList = intent.getStringArrayListExtra("cropDataList");
+        Log.d("Crop Data In Crop Result", String.valueOf(cropDataList.size()));
+
         generateCropLabelList();
         generatePlantingTimeList();
         generateManagementTipsList();
@@ -50,9 +54,9 @@ public class CropResultActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.cropResultRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(CropResultActivity.this));
 
-        generateCropResultList();
+        generateCropResultList(cropDataList);
 
-        Log.d("Array Result", String.valueOf(cropResultList.size()));
+        Log.d("Array Crop Result", String.valueOf(cropResultList.size()));
 
         if (cropResultList.size() == 0) {
             Toast.makeText(CropResultActivity.this, "No crop recommendation found", Toast.LENGTH_SHORT).show();
@@ -66,15 +70,15 @@ public class CropResultActivity extends AppCompatActivity {
     }
 
     //Need to Change
-    public void generateCropResultList() {
-        int randomIndex = random.nextInt(4);
+    public void generateCropResultList(ArrayList<String> cropDataList) {
+        int arr_length = cropDataList.size();
 
-        for(int i = 0; i < randomIndex; i++) {
+        for(int i = 0; i < arr_length; i++) {
             int randomCropLabelIndex = random.nextInt(cropLabelList.size());
             int randomPlantingTimeIndex = random.nextInt(plantingTimeList.size());
             int randomManagementTipsIndex = random.nextInt(managementTipsList.size());
 
-            String randomCropLabel = cropLabelList.get(randomCropLabelIndex);
+            String randomCropLabel = cropDataList.get(i);
             String randomPlantingTime = plantingTimeList.get(randomPlantingTimeIndex);
             String randomManagementTips = managementTipsList.get(randomManagementTipsIndex);
 

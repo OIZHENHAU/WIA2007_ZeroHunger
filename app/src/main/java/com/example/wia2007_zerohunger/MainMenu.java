@@ -10,12 +10,14 @@ import androidx.core.view.WindowInsetsCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import java.util.*;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -24,9 +26,13 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.wia2007_zerohunger.Part1.MainActivityP1;
 import com.example.wia2007_zerohunger.Part1.view.MainWeatherActivity;
+import com.example.wia2007_zerohunger.UserDatabase.UserAccount;
+import com.example.wia2007_zerohunger.UserDatabase.UserAccountViewModel;
 import com.google.firebase.auth.FirebaseAuth;
 
 
@@ -34,8 +40,10 @@ public class MainMenu extends AppCompatActivity {
 
     TextView nickName;
     Toolbar toolbar;
-
     Button agricultureSupportButton;
+    private String currentEmail;
+    private UserAccountViewModel userAccountViewModel;
+    private UserAccount currentUserAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,21 +57,52 @@ public class MainMenu extends AppCompatActivity {
 
         Intent intent = getIntent();
         String nickNameString = intent.getStringExtra("nickName");
+        String emailString = intent.getStringExtra("email");
+
+        currentEmail = emailString;
 
         nickName = findViewById(R.id.textViewUserName);
+        //nickName.setText("Welcome, " + nickNameString + "!");
 
-        nickName.setText("Welcome, " + nickNameString);
+        userAccountViewModel = new ViewModelProvider(MainMenu.this).get(UserAccountViewModel.class);
 
-        agricultureSupportButton = findViewById(R.id.agriculturalSupportButton);
+        /*userAccountViewModel.getAllUserAccount().observe(MainMenu.this, new Observer<List<UserAccount>>() {
+                    @Override
+                    public void onChanged(List<UserAccount> userAccounts) {
+                        for (UserAccount userAccount : userAccounts) {
+                            Log.d("onChanged: ", userAccount.getName());
+                            Log.d("onChanged: ", userAccount.getEmail());
+                        }
+                    }
+        });
+         */
+
+        userAccountViewModel.getUserAccountByEmail(currentEmail).observe(MainMenu.this, new Observer<UserAccount>() {
+
+            @Override
+            public void onChanged(UserAccount userAccount) {
+                if (userAccount != null) {
+                    Log.d("onChanged: ", userAccount.getName());
+                    nickName.setText("Welcome, " + userAccount.getName() + "!");
+                    currentUserAccount = userAccount;
+                } else {
+                    Log.d("onChanged: null", "null");
+                }
+            }
+        });
+
 
         toolbar = (Toolbar) findViewById(R.id.mainMenuToolbar);
         setSupportActionBar(toolbar);
+
+        agricultureSupportButton = findViewById(R.id.agriculturalSupportButton);
 
         agricultureSupportButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenu.this, MainActivityP1.class);
                 intent.putExtra("nickName", nickNameString);
+                intent.putExtra("email", currentEmail);
                 startActivity(intent);
             }
         });
