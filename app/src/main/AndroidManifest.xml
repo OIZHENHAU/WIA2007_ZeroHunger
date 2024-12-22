@@ -18,6 +18,36 @@
         android:theme="@style/Theme.WIA2007_ZeroHunger"
         tools:targetApi="31">
         <activity
+            android:name=".Part5.MainActivityPart5S10"
+            android:exported="false" />
+        <activity
+            android:name=".Part5.MainActivityPart5S9"
+            android:exported="false" />
+        <activity
+            android:name=".Part5.MainActivityPart5S8"
+            android:exported="false" />
+        <activity
+            android:name=".Part5.MainActivityPart5S7"
+            android:exported="false" />
+        <activity
+            android:name=".Part5.MainActivityPart5S6"
+            android:exported="false" />
+        <activity
+            android:name=".Part5.MainActivityPart5S5"
+            android:exported="false" />
+        <activity
+            android:name=".Part5.MainActivityPart5S4"
+            android:exported="false" />
+        <activity
+            android:name=".Part5.MainActivityPart5S3"
+            android:exported="false" />
+        <activity
+            android:name=".Part5.MainActivityPart5S2"
+            android:exported="false" />
+        <activity
+            android:name=".Part5.MainActivityPart5S1"
+            android:exported="false" />
+        <activity
             android:name=".Part1.soil_analysis.CropResultActivity"
             android:exported="false" />
         <activity
@@ -59,8 +89,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
     </application>
 
 </manifest>

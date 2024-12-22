@@ -31,6 +31,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.wia2007_zerohunger.Part1.MainActivityP1;
 import com.example.wia2007_zerohunger.Part1.view.MainWeatherActivity;
+import com.example.wia2007_zerohunger.Part5.MainActivityPart5S1;
 import com.example.wia2007_zerohunger.UserDatabase.UserAccount;
 import com.example.wia2007_zerohunger.UserDatabase.UserAccountViewModel;
 import com.google.firebase.auth.FirebaseAuth;
@@ -40,7 +41,7 @@ public class MainMenu extends AppCompatActivity {
 
     TextView nickName;
     Toolbar toolbar;
-    Button agricultureSupportButton;
+    Button agricultureSupportButton, povertyAssistanceButton;
     private String currentEmail;
     private UserAccountViewModel userAccountViewModel;
     private UserAccount currentUserAccount;
@@ -96,7 +97,9 @@ public class MainMenu extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         agricultureSupportButton = findViewById(R.id.agriculturalSupportButton);
+        povertyAssistanceButton = findViewById(R.id.povertyAssistanceButton);
 
+        //Part 1.)
         agricultureSupportButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,6 +109,16 @@ public class MainMenu extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //Part 5.)
+        povertyAssistanceButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenu.this, MainActivityPart5S1.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 
