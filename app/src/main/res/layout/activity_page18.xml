@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Part2.page18">
+
+    <LinearLayout
+        android:layout_width="411dp"
+        android:layout_height="128dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/page18_kitchenInfoP2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="186dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/page19_pic1" />
+
+        <TextView
+            android:id="@+id/page18_titleP2"
+            android:layout_width="259dp"
+            android:layout_height="96dp"
+            android:layout_weight="1"
+            android:text="Community Kitchen Resources "
+            android:textSize="26sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/page18_kitchenInfoP2"
+        android:layout_width="409dp"
+        android:layout_height="605dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/page18_imageKitchen1P2"
+                android:layout_width="match_parent"
+                android:layout_height="118dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/kitchen1" />
+
+            <TextView
+                android:id="@+id/page18_kitchen1P2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Springfield Kitchen"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/page18_addressKitchen1P2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="123 Main St, Springfield"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/page18_contactKitchen1P2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Contact: 555-1234"
+                android:textSize="16sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/page18_imageKitchen2P2"
+                android:layout_width="match_parent"
+                android:layout_height="118dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/kitchen2" />
+
+            <TextView
+                android:id="@+id/page18_kitchen2P2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Rivertown"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/page18_addressKitchen2P2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="456 Elm St, Rivertown"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/page18_contactKitchen2P2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Contact: 555-5678"
+                android:textSize="16sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/page18_imageKitchen3P2"
+                android:layout_width="match_parent"
+                android:layout_height="118dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/kitchen3" />
+
+            <TextView
+                android:id="@+id/page18_kitchen3P2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Lakeside Diner"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/page18_addressKitchen3P2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="789 Oak St, Lakeside"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/page18_contactKitchen3P2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Contact: 555-8765"
+                android:textSize="16sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/page18_imageKitchen4P2"
+                android:layout_width="match_parent"
+                android:layout_height="118dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/kitchen4" />
+
+            <TextView
+                android:id="@+id/page18_kitchen4P2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Hillcrest Hub"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/page18_addressKitchen4P2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="321 Birch St, Hillcrest"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/page18_contactKitchen4P2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Contact: 555-4321"
+                android:textSize="16sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/page18_imageKitchen5P2"
+                android:layout_width="match_parent"
+                android:layout_height="118dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/kitchen5" />
+
+            <TextView
+                android:id="@+id/page18_kitchen5P2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Valleyview Kitchen "
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/page18_addressKitchen5P2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="654 Pine St, ValleyView"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/page18_contactKitchen5P2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Contact: 555-6587"
+                android:textSize="16sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/page18_imageKitchen6P2"
+                android:layout_width="match_parent"
+                android:layout_height="118dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/kitchen6" />
+
+            <TextView
+                android:id="@+id/page18_kitchen6P2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Greenwood Eats"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/page18_addressKitchen6P2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="987 Maple St, Greenwood"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/page18_contactKitchen6P2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Contact: 555-9876"
+                android:textSize="16sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="413dp"
+        android:layout_height="59dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/page18_aboutUsBtnP2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#AEEAF0"
+            android:text="About us"
+            android:textColor="#000000"
+            app:cornerRadius="0dp" />
+
+        <Button
+            android:id="@+id/page18_resourcesBtnP2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#30D1E6"
+            android:text="Resources"
+            android:textColor="#000000"
+            app:cornerRadius="0dp" />
+
+        <Button
+            android:id="@+id/page18_donationBtnP2"
+            android:layout_width="113dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#AEEAF0"
+            android:text="Donation"
+            android:textColor="#000000"
+            app:cornerRadius="0dp" />
+
+        <Button
+            android:id="@+id/page18_getHelpBtnP2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#AEEAF0"
+            android:text="Help"
+            android:textColor="#000000"
+            app:cornerRadius="0dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

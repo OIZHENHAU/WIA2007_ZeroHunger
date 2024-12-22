@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <!-- Declare the ability to query apps that handle phone calls. (Required by Part 2) -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.DIAL" />
+
+            <data android:scheme="tel" />
+        </intent>
+    </queries>
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Required permissions by Part 2 -->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -17,6 +26,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WIA2007_ZeroHunger"
         tools:targetApi="31">
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
+
+             To get one, follow the directions here:
+
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBi6RE-l9AUuFCr0q8fMKHG25FVn56k-5g" />
+
         <activity
             android:name=".Part5.MainActivityPart5S10"
             android:exported="false" />
@@ -88,7 +112,35 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity> <!-- Other activities -->
+        <activity
+            android:name=".Part2.page16"
+            android:exported="false" />
+        <activity
+            android:name=".Part2.GoogleMap_P2"
+            android:exported="false"
+            android:label="@string/title_activity_google_map_p2" />
+        <activity
+            android:name=".Part2.page23"
+            android:exported="false" />
+        <activity
+            android:name=".Part2.page21"
+            android:exported="false" />
+        <activity
+            android:name=".Part2.page20"
+            android:exported="false" />
+        <activity
+            android:name=".Part2.page19"
+            android:exported="false" />
+        <activity
+            android:name=".Part2.page18"
+            android:exported="false" />
+        <activity
+            android:name=".Part2.page17"
+            android:exported="false" /> <!-- Foreground Service -->
+        <service
+            android:name=".Part2.MyNavigationService_P2"
+            android:foregroundServiceType="location" />
     </application>
 
 </manifest>

@@ -3,4 +3,5 @@
     <string name="info">Click image for more info</string>
     <string name="weather_info">Weather ForeCast</string>
     <string name="soil_info">Soil Analysis</string>
+    <string name="title_activity_google_map_p2">GoogleMap_P2</string>
 </resources>

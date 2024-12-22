@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/page21_1"
+    app:layout_anchorGravity="center"
+    tools:context=".Part2.page21">
+
+    <ScrollView
+        android:id="@+id/page21_scrollViewP2"
+        android:layout_width="359dp"
+        android:layout_height="537dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.288">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Spinner
+                android:id="@+id/page21_donationTypeP2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="#AEEAF0"
+                android:backgroundTint="#AEEAF0"
+                android:gravity="center"
+                android:spinnerMode="dropdown" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="28dp" />
+
+            <EditText
+                android:id="@+id/page21_fullOrganizationNameP2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="#AEEAF0"
+                android:backgroundTint="#AEEAF0"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Full Name"
+                android:inputType="text" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="28dp" />
+
+            <EditText
+                android:id="@+id/page21_emailP2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="#AEEAF0"
+                android:backgroundTint="#AEEAF0"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Email"
+                android:inputType="textEmailAddress" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="28dp" />
+
+            <EditText
+                android:id="@+id/page21_phoneNumberP2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="#AEEAF0"
+                android:backgroundTint="#AEEAF0"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Phone Number"
+                android:inputType="phone" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="28dp" />
+
+            <EditText
+                android:id="@+id/page21_takeupAddressP2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="#AEEAF0"
+                android:backgroundTint="#AEEAF0"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Takeup Address"
+                android:inputType="text" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="28dp" />
+
+            <Spinner
+                android:id="@+id/page21_CommunityKitchenSpinnerP2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="#AEEAF0"
+                android:backgroundTint="#AEEAF0"
+                android:gravity="center" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="28dp" />
+
+            <Spinner
+                android:id="@+id/page21_availablePeriodSpinnerP2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="#AEEAF0"
+                android:backgroundTint="#AEEAF0"
+                android:gravity="center" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="28dp" />
+
+            <Spinner
+                android:id="@+id/page21_transportMethodSpinnerP2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="#AEEAF0"
+                android:backgroundTint="#AEEAF0"
+                android:gravity="center" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="28dp" />
+
+            <EditText
+                android:id="@+id/page21_remarkP2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="#AEEAF0"
+                android:backgroundTint="#AEEAF0"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Remark (Anything you wanna tell us)"
+                android:inputType="text" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="28dp" />
+
+            <Button
+                android:id="@+id/page21_submitBtnP2"
+                android:layout_width="116dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="#576AD7"
+                android:gravity="center"
+                android:text="Submit"
+                android:textSize="18sp"
+                app:cornerRadius="0dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="28dp" />
+
+            <Button
+                android:id="@+id/page21_detailBtnP2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="#576AD7"
+                android:gravity="center"
+                android:text="Location"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:cornerRadius="0dp" /> <!-- Initially hidden -->
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/page21_backBtnP2"
+        android:layout_width="95dp"
+        android:layout_height="45dp"
+        android:backgroundTint="#576AD7"
+        android:text="Back"
+        android:textSize="16sp"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
