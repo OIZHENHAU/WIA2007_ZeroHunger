@@ -38,7 +38,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/locationListViewP5S9"
         android:layout_width="match_parent"
-        android:layout_height="550dp"
+        android:layout_height="600dp"
         android:layout_marginTop="16dp"
         tools:listitem="@layout/financial_item" />
 
