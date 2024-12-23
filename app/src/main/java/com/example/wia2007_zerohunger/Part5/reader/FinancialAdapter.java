@@ -44,7 +44,8 @@ public class FinancialAdapter extends RecyclerView.Adapter<FinancialAdapter.Fina
          */
 
         holder.textViewFinancialTitleP5.setText(currentFinancialData.getLocality());
-        holder.textViewAmountP5.setText(currentFinancialData.getFips());
+        String donationAmount = "RM " + currentFinancialData.getPoundsOfFoodDistributed();
+        holder.textViewAmountP5.setText(donationAmount);
         holder.textViewAvailableSlotP5.setText(currentFinancialData.getHouseholdsServed());
         String date = currentFinancialData.getMonth() + "/" + currentFinancialData.getYear();
         holder.textViewDateLineP5.setText(date);
