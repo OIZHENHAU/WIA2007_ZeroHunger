@@ -24,26 +24,26 @@ public class TextFileFinancialReader {
 
             while ((line = reader.readLine()) != null) {
                 String[] values = line.split("\\s+");
-                Log.d("Line", line);
+                //Log.d("Line", line);
 
                 String year = values[0];
-                Log.d("Year", year);
+                //Log.d("Year", year);
                 String month = values[1];
-                Log.d("Month", month);
+                //Log.d("Month", month);
                 String fips = values[2];
-                Log.d("FIPS", fips);
+                //Log.d("FIPS", fips);
                 String locality = values[3];
-                Log.d("Locality", locality);
+                //Log.d("Locality", locality);
                 String householdsServed = values[4];
-                Log.d("Households Served", householdsServed);
+                //Log.d("Households Served", householdsServed);
                 String individualsServed = values[5];
-                Log.d("Individuals Served", individualsServed);
+                //Log.d("Individuals Served", individualsServed);
                 String poundsOfFoodDistributed = values[6];
-                Log.d("Pounds of Food Distributed", poundsOfFoodDistributed);
+                //Log.d("Pounds of Food Distributed", poundsOfFoodDistributed);
                 double lat = Double.parseDouble(values[7]);
-                Log.d("LAT", String.valueOf(lat));
+                //Log.d("LAT", String.valueOf(lat));
                 double lon = Double.parseDouble(values[8]);
-                Log.d("LON", String.valueOf(lon));
+                //Log.d("LON", String.valueOf(lon));
 
                 FinancialData financialData = new FinancialData(year, month, fips, locality, householdsServed, individualsServed, poundsOfFoodDistributed, lat, lon);
                 arrFinancialData.add(financialData);

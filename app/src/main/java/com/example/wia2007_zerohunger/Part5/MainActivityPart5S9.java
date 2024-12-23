@@ -1,5 +1,6 @@
 package com.example.wia2007_zerohunger.Part5;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wia2007_zerohunger.Part5.reader.FinancialAdapter;
 import com.example.wia2007_zerohunger.Part5.reader.FinancialData;
+import com.example.wia2007_zerohunger.Part5.reader.FinancialFilter;
 import com.example.wia2007_zerohunger.Part5.reader.TextFileFinancialReader;
 import com.example.wia2007_zerohunger.R;
 
@@ -25,6 +27,7 @@ public class MainActivityPart5S9 extends AppCompatActivity {
     Button backButtonP5S9;
     List<FinancialData> financialDataList;
 
+    List<FinancialData> financialResultList;
     private RecyclerView recyclerView;
     private FinancialAdapter financialAdapter;
 
@@ -40,6 +43,30 @@ public class MainActivityPart5S9 extends AppCompatActivity {
         });
 
         generateFinancialDataList();
+
+        Intent intent = getIntent();
+        int filterValue = intent.getIntExtra("filter", 0);
+        Log.d("filterValue",String.valueOf(filterValue));
+
+        if (filterValue == 1) {
+            FinancialFilter filter = new FinancialFilter();
+            String countryName = intent.getStringExtra("countryName");
+            int minAmount = intent.getIntExtra("minAmount", 0);
+            int maxAmount = intent.getIntExtra("maxAmount", 0);
+            int minSlots = intent.getIntExtra("minSlots", 0);
+            int maxSlots = intent.getIntExtra("maxSlots", 0);
+            Log.d("countryNameP5S9", countryName);
+            Log.d("minAmountP5S9", String.valueOf(minAmount));
+            Log.d("maxAmountP5S9", String.valueOf(maxAmount));
+            Log.d("minSlotsP5S9", String.valueOf(minSlots));
+            Log.d("maxSlotsP5S9", String.valueOf(maxSlots));
+
+            financialResultList = filter.getFinancialByCondition(financialDataList, countryName, minAmount, maxAmount, minSlots, maxSlots);
+
+        } else {
+            financialResultList = financialDataList;
+        }
+
         Log.d("Financial List Size: ", String.valueOf(financialDataList.size()));
 
         backButtonP5S9 = findViewById(R.id.backButtonP5S9);
@@ -54,7 +81,7 @@ public class MainActivityPart5S9 extends AppCompatActivity {
         recyclerView = findViewById(R.id.locationListViewP5S9);
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivityPart5S9.this));
 
-        financialAdapter = new FinancialAdapter(financialDataList, MainActivityPart5S9.this);
+        financialAdapter = new FinancialAdapter(financialResultList, MainActivityPart5S9.this);
         recyclerView.setAdapter(financialAdapter);
     }
 
