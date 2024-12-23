@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -83,6 +84,24 @@ public class MainActivityPart5S9 extends AppCompatActivity {
 
         financialAdapter = new FinancialAdapter(financialResultList, MainActivityPart5S9.this);
         recyclerView.setAdapter(financialAdapter);
+
+        //Check for Financial Aid Location
+        financialAdapter.setOnItemClickListener(new FinancialAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(FinancialData financialData) {
+                Intent intent = new Intent(MainActivityPart5S9.this, MainActivityPart5S10.class);
+                /*intent.putExtra("id", note.getId());
+                intent.putExtra("title", note.getTitle());
+                intent.putExtra("description", note.getDescription());
+                 */
+
+                intent.putExtra("financialLatitude", financialData.getLat());
+                intent.putExtra("financialLongitude", financialData.getLon());
+
+                startActivity(intent);
+
+            }
+        });
     }
 
     public void generateFinancialDataList() {
