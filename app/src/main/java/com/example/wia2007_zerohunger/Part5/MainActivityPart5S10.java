@@ -68,6 +68,9 @@ public class MainActivityPart5S10 extends AppCompatActivity implements OnMapRead
 
         };
 
+        currentLat = 3.121366;
+        currentLon = 101.656325;
+
         Log.d("currentLatitude: ", String.valueOf(currentLat));
         Log.d("currentLongitude: ", String.valueOf(currentLon));
 
@@ -127,7 +130,7 @@ public class MainActivityPart5S10 extends AppCompatActivity implements OnMapRead
         // Output format
         String output = "json";
         // Building the url to the web service
-        String url = "https://maps.googleapis.com/maps/api/directions/" + output + "?" + parameters + "&key=" + "AIzaSyBR-at9ijSv7uoKZGVBDAEQ_3JCbNANNBw";
+        String url = "https://maps.googleapis.com/maps/api/directions/" + output + "?" + parameters + "&key=" + "AIzaSyBi6RE-l9AUuFCr0q8fMKHG25FVn56k-5g";
         return url;
     }
 }
