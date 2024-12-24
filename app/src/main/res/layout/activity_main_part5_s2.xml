@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Part5.MainActivityPart5S2">
+    tools:context=".Part5.MainActivityPart5S2"
+    android:background="@drawable/main_background">
 
     <!-- Title TextView -->
 

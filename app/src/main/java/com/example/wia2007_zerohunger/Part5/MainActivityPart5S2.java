@@ -2,6 +2,7 @@ package com.example.wia2007_zerohunger.Part5;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -47,6 +48,9 @@ public class MainActivityPart5S2 extends AppCompatActivity {
 
         registerActivityForUpdateNote();
 
+        Intent intent = getIntent();
+        int isUpdated = intent.getIntExtra("isUpdated", 0);
+
         backButtonMainP5S2 = findViewById(R.id.backButtonMainP5S2);
 
         backButtonMainP5S2.setOnClickListener(new View.OnClickListener() {
@@ -76,16 +80,38 @@ public class MainActivityPart5S2 extends AppCompatActivity {
             @Override
             public void onItemClick(Note note) {
                 Intent intent = new Intent(MainActivityPart5S2.this, MainActivityPart5S3.class);
-                /*intent.putExtra("id", note.getId());
-                intent.putExtra("title", note.getTitle());
-                intent.putExtra("description", note.getDescription());
+                intent.putExtra("aidName", note.getAidName());
+                intent.putExtra("donationAmount", note.getAidAmount());
+                intent.putExtra("availableSlot", note.getAidSlots());
+                intent.putExtra("aidDateLine", note.getAidDateLine());
+                intent.putExtra("financialID", note.getAidId());
+                intent.putExtra("imageID", note.getImageID());
 
-                 */
+                Log.d("aidNameP5S2: ", note.getAidName());
+                Log.d("donationAmountP5S2: ", String.valueOf(note.getAidAmount()));
+                Log.d("availableSlotP5S2: ", String.valueOf(note.getAidSlots()));
+                Log.d("aidDateLineP5S2: ", note.getAidDateLine());
+                Log.d("financialIDP5S2: ", String.valueOf(note.getAidId()));
+                Log.d("imageIDP5S2: ", String.valueOf(note.getImageID()));
+
                 //activity launcher
                 activityResultLauncherForUpdateNote.launch(intent);
 
             }
         });
+
+        if (isUpdated == 1) {
+            String aidName = intent.getStringExtra("aidName");
+            int donationAmount = intent.getIntExtra("donationAmount", 0);
+            int availableSlot = intent.getIntExtra("availableSlot", 0);
+            String aidDateLine = intent.getStringExtra("aidDateLine");
+            int financialID = intent.getIntExtra("financialID", 0);
+            int imageID = intent.getIntExtra("imageID", 0);
+
+            Note note = new Note(aidName, donationAmount, availableSlot, aidDateLine, imageID);
+            note.setAidId(financialID);
+            noteViewModel.update(note);
+        }
 
     }
 
@@ -96,6 +122,7 @@ public class MainActivityPart5S2 extends AppCompatActivity {
                     public void onActivityResult(ActivityResult result) {
                         int resultCode = result.getResultCode();
                         Intent data = result.getData();
+                        Log.d("Update Made P5S2: ", "Yes");
 
                         if (resultCode == RESULT_OK && data != null) {
                             /*String title = data.getStringExtra("titleLast");
@@ -106,6 +133,23 @@ public class MainActivityPart5S2 extends AppCompatActivity {
                             note.setId(id);
                             noteViewModel.update(note);
                              */
+                            String aidName = data.getStringExtra("aidName");
+                            int donationAmount = data.getIntExtra("donationAmount", 0);
+                            int availableSlot = data.getIntExtra("availableSlot", 0);
+                            String aidDateLine = data.getStringExtra("aidDateLine");
+                            int financialID = data.getIntExtra("financialID", 0);
+                            int imageID = data.getIntExtra("imageID", 0);
+
+                            Log.d("aidNameP5S2Update: ", aidName);
+                            Log.d("donationAmountP5S2Update: ", String.valueOf(donationAmount));
+                            Log.d("availableSlotP5S2Update: ", String.valueOf(availableSlot));
+                            Log.d("aidDateLineP5S2Update: ", aidDateLine);
+                            Log.d("financialIDP5S2Update: ", String.valueOf(financialID));
+                            Log.d("imageIDP5S2Update: ", String.valueOf(imageID));
+
+                            Note note = new Note(aidName, donationAmount, availableSlot, aidDateLine, imageID);
+                            note.setAidId(financialID);
+                            noteViewModel.update(note);
                         }
                     }
                 });

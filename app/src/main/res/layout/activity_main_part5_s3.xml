@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Part5.MainActivityPart5S3">
+    tools:context=".Part5.MainActivityPart5S3"
+    android:background="@drawable/main_background">
 
     <View
         android:id="@+id/view3"
@@ -132,7 +133,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/sumUpAmountTextViewP5S3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
@@ -144,10 +145,20 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/applyButtonP5S3"
+        android:id="@+id/calculateButtonP5S3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="648dp"
+        android:text="Calculate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/donateButtonP5S3"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
         android:layout_marginTop="648dp"
         android:text="Donate"
         app:layout_constraintStart_toStartOf="parent"

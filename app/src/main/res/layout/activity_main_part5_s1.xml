@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/main"
+    android:background="@drawable/main_background"
     tools:context=".Part5.MainActivityPart5S1">
 
     <!-- PASS Shortform TextView -->
