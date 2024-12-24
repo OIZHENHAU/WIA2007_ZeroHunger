@@ -4,4 +4,9 @@
     <string name="weather_info">Weather ForeCast</string>
     <string name="soil_info">Soil Analysis</string>
     <string name="title_activity_google_map_p2">GoogleMap_P2</string>
+    <string name="DFAP_Financial_Aid_Name">FinancialAidName</string>
+    <string name="DFAP_Financial_Aid_Amount">FinancialAidAmount</string>
+    <string name="DFAP_Financial_Aid_Slots">FinancialAidSlots</string>
+    <string name="DFAP_Financial_Aid_Dateline">FinancialAidDateline</string>
+    <string name="DFAP_Financial_Aid_Image">FinancialAidImage</string>
 </resources>

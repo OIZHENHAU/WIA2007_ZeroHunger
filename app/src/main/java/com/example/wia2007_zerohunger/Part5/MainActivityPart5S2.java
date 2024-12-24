@@ -1,16 +1,38 @@
 package com.example.wia2007_zerohunger.Part5;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.wia2007_zerohunger.Part5.FinancialDatabase.Note;
+import com.example.wia2007_zerohunger.Part5.FinancialDatabase.NoteAdapter;
+import com.example.wia2007_zerohunger.Part5.FinancialDatabase.NoteViewModel;
 import com.example.wia2007_zerohunger.R;
 
+import java.util.List;
+
 public class MainActivityPart5S2 extends AppCompatActivity {
+
+    Button backButtonMainP5S2;
+    RecyclerView locationListViewP5S2;
+    private NoteViewModel noteViewModel;
+    ActivityResultLauncher<Intent> activityResultLauncherForUpdateNote;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,5 +44,70 @@ public class MainActivityPart5S2 extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        registerActivityForUpdateNote();
+
+        backButtonMainP5S2 = findViewById(R.id.backButtonMainP5S2);
+
+        backButtonMainP5S2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        locationListViewP5S2 = findViewById(R.id.locationListViewP5S2);
+        locationListViewP5S2.setLayoutManager(new LinearLayoutManager(this));
+
+        NoteAdapter noteAdapter = new NoteAdapter();
+        locationListViewP5S2.setAdapter(noteAdapter);
+
+        noteViewModel = new ViewModelProvider.AndroidViewModelFactory(getApplication()).create(NoteViewModel.class);
+
+        noteViewModel.getAllNotes().observe(this, new Observer<List<Note>>() {
+            @Override
+            public void onChanged(List<Note> notes) {
+                //update Recycler View
+                noteAdapter.setNotes(notes);
+            }
+        });
+
+        noteAdapter.setOnItemClickListener(new NoteAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Note note) {
+                Intent intent = new Intent(MainActivityPart5S2.this, MainActivityPart5S3.class);
+                /*intent.putExtra("id", note.getId());
+                intent.putExtra("title", note.getTitle());
+                intent.putExtra("description", note.getDescription());
+
+                 */
+                //activity launcher
+                activityResultLauncherForUpdateNote.launch(intent);
+
+            }
+        });
+
+    }
+
+    public void registerActivityForUpdateNote() {
+        activityResultLauncherForUpdateNote = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+                new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult result) {
+                        int resultCode = result.getResultCode();
+                        Intent data = result.getData();
+
+                        if (resultCode == RESULT_OK && data != null) {
+                            /*String title = data.getStringExtra("titleLast");
+                            String description = data.getStringExtra("descriptionLast");
+                            int id = data.getIntExtra("noteId", -1);
+
+                            Note note = new Note(title, description);
+                            note.setId(id);
+                            noteViewModel.update(note);
+                             */
+                        }
+                    }
+                });
     }
 }

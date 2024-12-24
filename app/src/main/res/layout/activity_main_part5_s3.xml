@@ -11,25 +11,22 @@
         android:id="@+id/view3"
         android:layout_width="311dp"
         android:layout_height="477dp"
-        android:layout_marginBottom="99dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="144dp"
         android:background="@drawable/border8dp"
         android:fadingEdgeLength="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/subtitleTextView"
-        app:layout_constraintVertical_bias="0.506" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/sortView"
         android:layout_width="300dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="630dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="72dp"
         android:background="@drawable/border4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/titleTextView"
@@ -56,113 +53,58 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titleTextView" />
 
+
     <TextView
         android:id="@+id/nameCriteriaTextView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="184dp"
         android:text="Name"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.233"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/subtitleTextView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/amountCriteriaTextView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="276dp"
         android:text="Amount"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nameCriteriaTextView3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/minAmountEditTextP5S3"
-        android:layout_width="100dp"
+        android:layout_width="240dp"
         android:layout_height="48dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="20dp"
-        android:hint="Min: 500"
-        android:inputType="number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/amountCriteriaTextView3" />
-
-    <EditText
-        android:id="@+id/maxAmountEditText3"
-        android:layout_width="100dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="222dp"
-        android:hint="Max: 2000"
-        android:inputType="number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/minAmountEditTextP5S3" />
-
-    <TextView
-        android:id="@+id/availableSlotsCriteriaTextView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="20dp"
-        android:text="Available Slots"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/maxAmountEditText3" />
-
-    <EditText
-        android:id="@+id/minSlotsEditTextP5S3"
-        android:layout_width="100dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="20dp"
-        android:hint="Min: 1"
-        android:inputType="number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/availableSlotsCriteriaTextView3" />
-
-    <EditText
-        android:id="@+id/maxSlotsEditTextP5S3"
-        android:layout_width="100dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="224dp"
-        android:layout_marginTop="400dp"
-        android:hint="Max: 2"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="308dp"
+        android:hint="Min: RM10"
         android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/datelineCriteriaTextView3"
+        android:id="@+id/availableSlotsCriteriaTextView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="16dp"
-        android:text="Dateline"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="372dp"
+        android:text="Available Slots"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/maxSlotsEditTextP5S3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/minDateLineEditTextP5S3"
-        android:layout_width="100dp"
+        android:id="@+id/minSlotsEditTextP5S3"
+        android:layout_width="240dp"
         android:layout_height="48dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="408dp"
         android:hint="Min: 1"
-        android:inputType="number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/datelineCriteriaTextView3" />
-
-    <EditText
-        android:id="@+id/maxDateLineEditTextP5S3"
-        android:layout_width="100dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="224dp"
-        android:layout_marginTop="520dp"
-        android:hint="Max: 2"
         android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -171,24 +113,44 @@
         android:id="@+id/nameEditTextP5S3"
         android:layout_width="240dp"
         android:layout_height="48dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="216dp"
         android:hint="Name"
         android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nameCriteriaTextView3" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="480dp"
+        android:text="Total Donation: "
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="528dp"
+        android:gravity="center"
+        android:text="-"
+        android:textSize="23dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/applyButtonP5S3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="Apply"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="648dp"
+        android:text="Donate"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
