@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="24dp"
-            android:text="Direct Financial Aid Platform"
+            android:text="Financial Aid Location Platform"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Amount of Financial Aid"
+            android:text="Select your preferences"
             android:textAlignment="center"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -154,11 +154,11 @@
 
     <Button
         android:id="@+id/continueButtonP5S9a"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="216dp"
         android:layout_marginTop="624dp"
-        android:text="Continue"
+        android:text="Skip"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

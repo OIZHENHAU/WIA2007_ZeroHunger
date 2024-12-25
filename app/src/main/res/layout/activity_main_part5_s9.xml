@@ -16,31 +16,35 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Food Bank and Shelter Locations"
-        android:textSize="20sp"
+        android:textSize="22sp"
         android:textStyle="bold" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:textSize="16sp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="20dp"
         android:text="Please click to view location" />
 
     <View
         android:id="@+id/sortView"
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="30dp"
+        android:layout_margin="5dp"
         android:layout_marginBottom="5dp"
-        android:backgroundTint="@color/blue"
         android:background="@drawable/border4dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/locationListViewP5S9"
         android:layout_width="match_parent"
         android:layout_height="600dp"
-        android:layout_marginTop="16dp"
+        android:layout_margin="5dp"
+        android:layout_marginTop="30dp"
         tools:listitem="@layout/financial_item" />
 
     <LinearLayout
@@ -55,8 +59,9 @@
 
     <Button
         android:id="@+id/backButtonP5S9"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="48dp"
+        android:layout_marginStart="100dp"
         android:text="Back" />
 
 </LinearLayout>

@@ -117,8 +117,8 @@
 
                 <ImageView
                     android:id="@+id/financialItemImageP5"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:src="@drawable/workspace1"
                     android:layout_marginStart="50dp" />
 
