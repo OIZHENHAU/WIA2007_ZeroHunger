@@ -6,7 +6,7 @@
     android:id="@+id/refreshLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue"
+    android:background="@drawable/main_background"
     tools:context=".Part1.view.WeatherActivity">
 
     <ScrollView
@@ -58,8 +58,8 @@
                     android:layout_height="48dp"
                     android:id="@+id/editTextCityName"
                     android:hint="Enter City Name"
-                    android:textColorHint="@color/white"
-                    android:textColor="@color/white"
+                    android:textColorHint="@color/black"
+                    android:textColor="@color/black"
                     android:gravity="center"
                     android:inputType="text"
                     android:singleLine="true"
@@ -92,7 +92,7 @@
                     android:layout_gravity="center"
                     android:layout_margin="16dp"
                     android:text="London , GB"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="30sp"
                     android:id="@+id/textViewCityName"/>
 
@@ -123,7 +123,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/progressBarWeatherIcon"
-                            android:indeterminateTint="@color/white"
+                            android:indeterminateTint="@color/black"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -142,7 +142,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/textViewTemperature"
                             android:text="25 C"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:textSize="40sp"
                             android:textStyle="bold"
                             android:layout_gravity="center"/>
@@ -153,7 +153,7 @@
                             android:id="@+id/textViewDescription"
                             android:layout_gravity="center"
                             android:text="Few Clouds"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:textSize="30sp"/>
 
                     </LinearLayout>
@@ -174,7 +174,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Humidity"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:textSize="24sp"
                             android:textStyle="bold"/>
 
@@ -182,7 +182,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Max Temp"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:layout_marginTop="5dp"
                             android:textSize="24sp"
                             android:textStyle="bold"/>
@@ -191,7 +191,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Min Temp"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:layout_marginTop="5dp"
                             android:textSize="24sp"
                             android:textStyle="bold"/>
@@ -200,7 +200,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Pressure"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:layout_marginTop="5dp"
                             android:textSize="24sp"
                             android:textStyle="bold"/>
@@ -209,7 +209,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Wind"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:layout_marginTop="5dp"
                             android:textSize="24sp"
                             android:textStyle="bold"/>
@@ -227,7 +227,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/textViewHumidity"
                             android:text=": 50%"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:textSize="24sp"/>
 
                         <TextView
@@ -236,7 +236,7 @@
                             android:id="@+id/textViewMaxTemp"
                             android:layout_marginTop="5dp"
                             android:text=": 25 C"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:textSize="24sp"/>
 
                         <TextView
@@ -245,7 +245,7 @@
                             android:id="@+id/textViewMinTemp"
                             android:text=": 16 C"
                             android:layout_marginTop="5dp"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:textSize="24sp"/>
 
                         <TextView
@@ -254,7 +254,7 @@
                             android:id="@+id/textViewPressure"
                             android:text=": 30"
                             android:layout_marginTop="5dp"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:textSize="24sp"/>
 
                         <TextView
@@ -262,7 +262,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/textViewWind"
                             android:text=": 5 km/h"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:layout_marginTop="5dp"
                             android:textSize="24sp"/>
 
