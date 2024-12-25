@@ -27,6 +27,48 @@
         android:theme="@style/Theme.WIA2007_ZeroHunger"
         tools:targetApi="31">
         <activity
+            android:name=".Part4.ExpertDirectoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Part4.SpecialAwardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Part4.ScheduleAppointmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Part4.QuizActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Part4.ProgressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Part4.MyConsultationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Part4.MainActivityPart4"
+            android:exported="false" />
+        <activity
+            android:name=".Part4.ExpertDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Part4.CourseListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Part4.CourseDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Part4.ConsultationDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Part4.AgriLabActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Part4.AgriIQActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Part4.AgriAidActivity"
+            android:exported="false" />
+        <activity
             android:name=".Part5.MainActivityPart5S9a"
             android:exported="false" />
         <!--

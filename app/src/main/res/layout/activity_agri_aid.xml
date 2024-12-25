@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/CLAgriAid"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1"
+    tools:context=".Part4.AgriAidActivity">
+
+    <TextView
+        android:id="@+id/TVAgriAidTitile"
+        android:layout_width="283dp"
+        android:layout_height="47dp"
+        android:text="AgriAid"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.055" />
+
+    <SearchView
+        android:id="@+id/SVAgriAid"
+        android:layout_width="348dp"
+        android:layout_height="53dp"
+        android:background="#FFFFFF"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search what you need"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.603"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TVAgriAidTitile"
+        app:layout_constraintVertical_bias="0.025" />
+
+    <ImageView
+        android:id="@+id/IVExpertDirectory"
+        android:layout_width="337dp"
+        android:layout_height="127dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SVAgriAid"
+        app:layout_constraintVertical_bias="0.197"
+        app:srcCompat="@drawable/expertderectoryimage" />
+
+    <Button
+        android:id="@+id/BtnExpertDirectory"
+        android:layout_width="151dp"
+        android:layout_height="56dp"
+        android:text="Expert Directory"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IVExpertDirectory"
+        app:layout_constraintVertical_bias="0.062" />
+
+    <TextView
+        android:id="@+id/TVPageInfo"
+        android:layout_width="334dp"
+        android:layout_height="48dp"
+        android:text="Connect with experts and get professional agrcultural advice"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/IVExpertDirectory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SVAgriAid"
+        app:layout_constraintVertical_bias="0.466" />
+
+    <ImageView
+        android:id="@+id/IVConsultation"
+        android:layout_width="167dp"
+        android:layout_height="113dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.776"
+        app:srcCompat="@drawable/myconsultationimage" />
+
+    <ImageView
+        android:id="@+id/IVSchedule"
+        android:layout_width="158dp"
+        android:layout_height="123dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.703"
+        app:layout_constraintStart_toEndOf="@+id/IVConsultation"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.773"
+        app:srcCompat="@drawable/scheduleconsultationimage" />
+
+    <Button
+        android:id="@+id/BtnMyConsultation"
+        android:layout_width="131dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:text="My Consultation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IVConsultation"
+        app:layout_constraintVertical_bias="0.047" />
+
+    <Button
+        android:id="@+id/BtnSchedule"
+        android:layout_width="143dp"
+        android:layout_height="56dp"
+        android:text="Schedule Consultation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.626"
+        app:layout_constraintStart_toEndOf="@+id/BtnMyConsultation"
+        app:layout_constraintTop_toBottomOf="@+id/IVSchedule"
+        app:layout_constraintVertical_bias="0.259" />
+</androidx.constraintlayout.widget.ConstraintLayout>

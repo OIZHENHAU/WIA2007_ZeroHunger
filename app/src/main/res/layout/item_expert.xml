@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/ivExpertAvatar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/expertprofile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- 专家名字 -->
+    <TextView
+        android:id="@+id/tvExpertName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Name: John Doe"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/ivExpertAvatar"
+        app:layout_constraintTop_toTopOf="@id/ivExpertAvatar"
+        app:layout_constraintBottom_toTopOf="@id/tvExpertSpecialization"
+        app:layout_constraintEnd_toStartOf="@id/btnViewDetails"
+        android:layout_marginStart="8dp" />
+
+    <!-- 专家擅长领域 -->
+    <TextView
+        android:id="@+id/tvExpertSpecialization"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Good At: Crop Rotation"
+        android:textSize="14sp"
+        android:textColor="#666"
+        app:layout_constraintStart_toStartOf="@id/tvExpertName"
+        app:layout_constraintTop_toBottomOf="@id/tvExpertName"
+        app:layout_constraintEnd_toEndOf="@id/tvExpertName" />
+
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:numStars="5"
+        android:rating="4.5"
+        android:stepSize="0.5"
+        android:theme="@style/Widget.AppCompat.RatingBar.Indicator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.397"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvExpertSpecialization"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnViewDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Details"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvExpertName"
+        app:layout_constraintBottom_toBottomOf="@id/tvExpertSpecialization" />
+</androidx.constraintlayout.widget.ConstraintLayout>

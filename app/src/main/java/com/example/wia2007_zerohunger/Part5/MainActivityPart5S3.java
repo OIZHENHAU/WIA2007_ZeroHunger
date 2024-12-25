@@ -52,12 +52,6 @@ public class MainActivityPart5S3 extends AppCompatActivity {
         int financialID = intent.getIntExtra("financialID", 0);
         int imageID = intent.getIntExtra("imageID", 0);
 
-        Log.d("aidNameP5S3: ", aidName);
-        Log.d("donationAmountP5S3: ", String.valueOf(donationAmount));
-        Log.d("availableSlotP5S3: ", String.valueOf(availableSlot));
-        Log.d("aidDateLineP5S3: ", aidDateLine);
-        Log.d("financialIDP5S3: ", String.valueOf(financialID));
-        Log.d("imageIDP5S3: ", String.valueOf(imageID));
 
 
         calculateButtonP5S3.setOnClickListener(new View.OnClickListener() {

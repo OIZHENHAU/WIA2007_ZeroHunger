@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/AgriLabMainPage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/labbackground"
+    tools:context=".Part4.AgriLabActivity" >
+
+    <ImageView
+        android:id="@+id/IVAgriLab1"
+        android:layout_width="64dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.041"
+        app:srcCompat="@drawable/agrilabpic" />
+
+    <TextView
+        android:id="@+id/TVAgriLab"
+        android:layout_width="193dp"
+        android:layout_height="50dp"
+        android:text="AgriLab"
+        android:textAlignment="center"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintStart_toEndOf="@+id/IVAgriLab1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.054" />
+
+    <SearchView
+        android:id="@+id/SVCourse"
+        android:layout_width="339dp"
+        android:layout_height="43dp"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        android:iconifiedByDefault="false"
+        android:padding="10dp"
+        android:queryHint="Search course by topic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TVAgriLab"
+        app:layout_constraintVertical_bias="0.056" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.315"
+        app:srcCompat="@drawable/agrilabpic2" />
+
+    <TextView
+        android:id="@+id/TV2Greeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Good morning"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.29" />
+
+    <TextView
+        android:id="@+id/TV3Greeting"
+        android:layout_width="307dp"
+        android:layout_height="19dp"
+        android:text="What do you want to learn today?"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.336"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SVCourse"
+        app:layout_constraintVertical_bias="0.337" />
+
+    <TextView
+        android:id="@+id/TVCourseInfo"
+        android:layout_width="370dp"
+        android:layout_height="37dp"
+        android:text="Explore courses on sustainable farming! Choose the courses by different difficulties."
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.577" />
+
+    <ImageView
+        android:id="@+id/IVBeginer"
+        android:layout_width="94dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/IVIntermediate"
+        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TVCourseInfo"
+        app:layout_constraintVertical_bias="0.095"
+        app:srcCompat="@drawable/beginnertag" />
+
+    <ImageView
+        android:id="@+id/IVIntermediate"
+        android:layout_width="107dp"
+        android:layout_height="83dp"
+        android:layout_marginEnd="52dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/IVAdvanced"
+        app:layout_constraintTop_toBottomOf="@+id/TVCourseInfo"
+        app:layout_constraintVertical_bias="0.095"
+        app:srcCompat="@drawable/intermediate" />
+
+    <ImageView
+        android:id="@+id/IVAdvanced"
+        android:layout_width="101dp"
+        android:layout_height="83dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TVCourseInfo"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/advanced" />
+
+    <Button
+        android:id="@+id/BtnBeginner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Beginner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IVBeginer"
+        app:layout_constraintVertical_bias="0.163" />
+
+    <Button
+        android:id="@+id/BtnIntermediate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:text="Intermediate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/BtnBeginner"
+        app:layout_constraintTop_toBottomOf="@+id/IVIntermediate"
+        app:layout_constraintVertical_bias="0.169" />
+
+    <Button
+        android:id="@+id/BtnAdvanced"
+        android:layout_width="130dp"
+        android:layout_height="48dp"
+        android:text="Andvanced"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/BtnIntermediate"
+        app:layout_constraintTop_toBottomOf="@+id/IVAdvanced"
+        app:layout_constraintVertical_bias="0.169" />
+
+    <TextView
+        android:id="@+id/TVGoQuiz"
+        android:layout_width="164dp"
+        android:layout_height="23dp"
+        android:text="Ready for the quiz?"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.892" />
+
+    <Button
+        android:id="@+id/BtnGoQuiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="GO !"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TVGoQuiz"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mainpage_background"
+    tools:context=".Part4.SpecialAwardActivity">
+
+    <ImageView
+        android:id="@+id/IVGraduate"
+        android:layout_width="190dp"
+        android:layout_height="94dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_graduate" />
+
+    <TextView
+        android:id="@+id/TVSpecialAward"
+        android:layout_width="141dp"
+        android:layout_height="34dp"
+        android:text="Special Award"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IVGraduate"
+        app:layout_constraintVertical_bias="0.033" />
+
+    <ImageView
+        android:id="@+id/IVBadge"
+        android:layout_width="171dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TVSpecialAward"
+        app:srcCompat="@drawable/img_special_award" />
+
+    <TextView
+        android:id="@+id/agri_lab_award_text"
+        android:layout_width="347dp"
+        android:layout_height="295dp"
+        android:layout_marginTop="8dp"
+        android:padding="16dp"
+        android:text="AgriLab Certification Award\n\nCongratulations on reaching this remarkable milestone! Through dedication and perseverance, you have mastered the core principles of sustainable agriculture. Your journey from foundational knowledge to advanced techniques reflects a commitment to cultivating a better future for our planet.\n\nAs an AgriLab Graduate, you stand ready to apply your knowledge in the field, fostering growth, sustainability, and resilience. May your accomplishments here inspire continued learning and a thriving agricultural journey ahead.\n\nAwarded with Pride by AgriLab"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IVBadge"
+        app:layout_constraintVertical_bias="0.045" />
+
+    <Button
+        android:id="@+id/BtnAccept"
+        android:layout_width="161dp"
+        android:layout_height="67dp"
+        android:backgroundTint="#4CAF50"
+        android:text="Accept"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/agri_lab_award_text" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

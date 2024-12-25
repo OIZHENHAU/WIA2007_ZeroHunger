@@ -87,12 +87,6 @@ public class MainActivityPart5S2 extends AppCompatActivity {
                 intent.putExtra("financialID", note.getAidId());
                 intent.putExtra("imageID", note.getImageID());
 
-                Log.d("aidNameP5S2: ", note.getAidName());
-                Log.d("donationAmountP5S2: ", String.valueOf(note.getAidAmount()));
-                Log.d("availableSlotP5S2: ", String.valueOf(note.getAidSlots()));
-                Log.d("aidDateLineP5S2: ", note.getAidDateLine());
-                Log.d("financialIDP5S2: ", String.valueOf(note.getAidId()));
-                Log.d("imageIDP5S2: ", String.valueOf(note.getImageID()));
 
                 //activity launcher
                 activityResultLauncherForUpdateNote.launch(intent);
@@ -140,12 +134,6 @@ public class MainActivityPart5S2 extends AppCompatActivity {
                             int financialID = data.getIntExtra("financialID", 0);
                             int imageID = data.getIntExtra("imageID", 0);
 
-                            Log.d("aidNameP5S2Update: ", aidName);
-                            Log.d("donationAmountP5S2Update: ", String.valueOf(donationAmount));
-                            Log.d("availableSlotP5S2Update: ", String.valueOf(availableSlot));
-                            Log.d("aidDateLineP5S2Update: ", aidDateLine);
-                            Log.d("financialIDP5S2Update: ", String.valueOf(financialID));
-                            Log.d("imageIDP5S2Update: ", String.valueOf(imageID));
 
                             Note note = new Note(aidName, donationAmount, availableSlot, aidDateLine, imageID);
                             note.setAidId(financialID);

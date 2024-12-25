@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/CLAgriIQ"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mainpage_background"
+    tools:context=".Part4.AgriIQActivity">
+
+    <Button
+        android:id="@+id/btnGoHard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Let's go !"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.973"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.944" />
+
+    <Button
+        android:id="@+id/btnGoMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Let's go !"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.967"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.698" />
+
+    <ImageView
+        android:id="@+id/IVBlackboard"
+        android:layout_width="265dp"
+        android:layout_height="141dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.589"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.027"
+        app:srcCompat="@drawable/blackboard" />
+
+    <TextView
+        android:id="@+id/TVAgriIQ"
+        android:layout_width="184dp"
+        android:layout_height="37dp"
+        android:text="Welcome to AgriIQ !"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.572"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.083" />
+
+    <ImageView
+        android:id="@+id/IVEasy"
+        android:layout_width="75dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IVBlackboard"
+        app:layout_constraintVertical_bias="0.101"
+        app:srcCompat="@drawable/beginnertag" />
+
+    <TextView
+        android:id="@+id/TVEasyDisc"
+        android:layout_width="298dp"
+        android:layout_height="91dp"
+        android:text="Test your understanding of the basics of sustainable farming. Perfect for beginners looking to build a strong foundation in soil health, crop rotation, and water conservation."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toEndOf="@+id/IVEasy"
+        app:layout_constraintTop_toBottomOf="@+id/IVBlackboard"
+        app:layout_constraintVertical_bias="0.105" />
+
+    <Button
+        android:id="@+id/BtnGoEasy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Let's go !"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.973"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.421" />
+
+    <ImageView
+        android:id="@+id/IVMedium"
+        android:layout_width="70dp"
+        android:layout_height="93dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IVEasy"
+        app:layout_constraintVertical_bias="0.219"
+        app:srcCompat="@drawable/intermediate" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="285dp"
+        android:layout_height="96dp"
+        android:text="Challenge yourself with practical questions on crop management and pest control. Ideal for those who want to apply what they’ve learned and improve farming efficiency."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/IVMedium"
+        app:layout_constraintTop_toBottomOf="@+id/TVEasyDisc"
+        app:layout_constraintVertical_bias="0.214" />
+
+    <ImageView
+        android:id="@+id/IVHard"
+        android:layout_width="85dp"
+        android:layout_height="112dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.018"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IVMedium"
+        app:layout_constraintVertical_bias="0.445"
+        app:srcCompat="@drawable/advanced" />
+
+    <TextView
+        android:id="@+id/TVHard"
+        android:layout_width="287dp"
+        android:layout_height="90dp"
+        android:text="Put your advanced knowledge to the test with complex questions on precision agriculture and climate-resilient practices. Designed for experienced learners ready to master sustainable techniques."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintStart_toEndOf="@+id/IVHard"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.443" />
+
+    <ImageView
+        android:id="@+id/IVProgress"
+        android:layout_width="93dp"
+        android:layout_height="54dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IVHard"
+        app:layout_constraintVertical_bias="0.937"
+        app:srcCompat="@drawable/view_my_progress_image" />
+
+    <Button
+        android:id="@+id/BtnViewProgress"
+        android:layout_width="149dp"
+        android:layout_height="52dp"
+        android:text="View my progress"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/IVProgress"
+        app:layout_constraintTop_toBottomOf="@+id/TVHard"
+        app:layout_constraintVertical_bias="0.958" />
+</androidx.constraintlayout.widget.ConstraintLayout>
