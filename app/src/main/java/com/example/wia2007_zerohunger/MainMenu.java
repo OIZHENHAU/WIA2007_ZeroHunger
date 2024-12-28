@@ -32,6 +32,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.wia2007_zerohunger.Part1.MainActivityP1;
 import com.example.wia2007_zerohunger.Part1.view.MainWeatherActivity;
 import com.example.wia2007_zerohunger.Part2.page16;
+import com.example.wia2007_zerohunger.Part3.MainActivityPart3;
 import com.example.wia2007_zerohunger.Part4.MainActivityPart4;
 import com.example.wia2007_zerohunger.Part5.MainActivityPart5S1;
 import com.example.wia2007_zerohunger.UserDatabase.UserAccount;
@@ -119,6 +120,17 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenu.this, page16.class);
+                startActivity(intent);
+            }
+        });
+
+        //Part 3.)
+        Button communityCollaborationButtonPart3 = findViewById(R.id.communityCollaborationButtonPart3);
+
+        communityCollaborationButtonPart3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenu.this, MainActivityPart3.class);
                 startActivity(intent);
             }
         });
