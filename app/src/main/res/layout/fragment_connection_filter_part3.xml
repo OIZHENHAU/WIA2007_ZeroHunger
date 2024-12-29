@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/backgroundp3"
+    tools:context=".Part3.ConnectionFragmentFilterPart3">
+    
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        android:orientation="vertical"
+        android:layout_marginTop="150dp"
+        android:layout_marginStart="50dp"
+        android:background="@drawable/background_search1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="10dp"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:text="Filter By: "/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Distance: "
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                android:textSize="20dp"/>
+
+            <EditText
+                android:id="@+id/distanceFilterFragmentP3F1"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:hint="12 km"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Product: "
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                android:textSize="20dp"/>
+
+            <EditText
+                android:id="@+id/productFilterFragmentP3F1"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="10dp"
+                android:hint="Fruits"/>
+
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginStart="10dp"
+                android:text="Minimum Price: "/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/priceFilterFragmentP3F1"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:hint="RM 10"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/searchButtonFilterFragmentP3F1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="100dp"
+            android:backgroundTint="@color/green"
+            android:text="Search"/>
+
+    </LinearLayout>
+    
+</FrameLayout>

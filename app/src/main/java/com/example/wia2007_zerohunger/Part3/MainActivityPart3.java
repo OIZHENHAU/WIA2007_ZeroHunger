@@ -1,12 +1,16 @@
 package com.example.wia2007_zerohunger.Part3;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.wia2007_zerohunger.R;
@@ -14,9 +18,8 @@ import com.google.android.material.tabs.TabLayout;
 
 public class MainActivityPart3 extends AppCompatActivity {
 
-    TabLayout mainTabLayoutPart3;
-    ViewPager2 viewPageMainPart3;
-    ViewPageAdapter viewPageAdapter;
+    Button connectionButtonPart3, reservationButtonPart3, subscriptionButtonPart3;
+    Button prevButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,35 +32,80 @@ public class MainActivityPart3 extends AppCompatActivity {
             return insets;
         });
 
-        mainTabLayoutPart3 = findViewById(R.id.mainTabLayoutPart3);
+        connectionButtonPart3 = findViewById(R.id.connectionButtonPart3);
+        reservationButtonPart3 = findViewById(R.id.reservationButtonPart3);
+        subscriptionButtonPart3 = findViewById(R.id.subscriptionButtonPart3);
 
-        viewPageMainPart3 = findViewById(R.id.viewPageMainPart3);
-        viewPageAdapter = new ViewPageAdapter(this);
-        viewPageMainPart3.setAdapter(viewPageAdapter);
+        prevButton = connectionButtonPart3;
 
-        mainTabLayoutPart3.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        ConnectionFragmentPart3 connectionFragmentPart3 = new ConnectionFragmentPart3();
+        fragmentTransaction.replace(R.id.viewPageMainPart3, connectionFragmentPart3);
+        fragmentTransaction.commit();
+
+        connectionButtonPart3.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPageMainPart3.setCurrentItem(tab.getPosition());
-            }
+            public void onClick(View v) {
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
+                ConnectionFragmentPart3 connectionFragmentPart3 = new ConnectionFragmentPart3();
+                fragmentTransaction.replace(R.id.viewPageMainPart3, connectionFragmentPart3);
+                fragmentTransaction.commit();
 
-            }
+                prevButton.setBackgroundColor(getResources().getColor(R.color.light_grey));
+                prevButton.setTextColor(getResources().getColor(R.color.black));
 
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
+                connectionButtonPart3.setBackgroundColor(getResources().getColor(R.color.green));
+                connectionButtonPart3.setTextColor(getResources().getColor(R.color.light_grey));
+
+                prevButton = connectionButtonPart3;
 
             }
         });
 
-        viewPageMainPart3.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+        reservationButtonPart3.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onPageSelected(int position) {
-                super.onPageSelected(position);
-                mainTabLayoutPart3.getTabAt(position).select();
+            public void onClick(View v) {
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                ReservationFragmentPart3 reservationFragmentPart3 = new ReservationFragmentPart3();
+                fragmentTransaction.replace(R.id.viewPageMainPart3, reservationFragmentPart3);
+                fragmentTransaction.commit();
+
+                prevButton.setBackgroundColor(getResources().getColor(R.color.light_grey));
+                prevButton.setTextColor(getResources().getColor(R.color.black));
+
+                reservationButtonPart3.setBackgroundColor(getResources().getColor(R.color.green));
+                reservationButtonPart3.setTextColor(getResources().getColor(R.color.light_grey));
+
+                prevButton = reservationButtonPart3;
+
             }
         });
+
+        subscriptionButtonPart3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                SubscriptionFragmentPart3 subscriptionFragmentPart3 = new SubscriptionFragmentPart3();
+                fragmentTransaction.replace(R.id.viewPageMainPart3, subscriptionFragmentPart3);
+                fragmentTransaction.commit();
+
+                prevButton.setBackgroundColor(getResources().getColor(R.color.light_grey));
+                prevButton.setTextColor(getResources().getColor(R.color.black));
+
+                subscriptionButtonPart3.setBackgroundColor(getResources().getColor(R.color.green));
+                subscriptionButtonPart3.setTextColor(getResources().getColor(R.color.light_grey));
+
+                prevButton = subscriptionButtonPart3;
+            }
+        });
+
     }
 }

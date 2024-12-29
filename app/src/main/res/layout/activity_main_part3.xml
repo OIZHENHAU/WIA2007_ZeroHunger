@@ -7,33 +7,43 @@
     android:layout_height="match_parent"
     tools:context=".Part3.MainActivityPart3">
 
-    <com.google.android.material.tabs.TabLayout
+    <LinearLayout
         android:id="@+id/mainTabLayoutPart3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabIndicatorColor="#43A047"
-        app:tabRippleColor="#43A047"
-        app:tabSelectedTextColor="#43A047"
-        app:tabTextColor="#000000">
+        android:orientation="horizontal">
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Local Farm and Organic Connection" />
+        <Button
+            android:id="@+id/connectionButtonPart3"
+            android:layout_width="135dp"
+            android:layout_height="match_parent"
+            android:text="Connection"
+            android:layout_marginStart="3dp"
+            android:textColor="@color/light_grey"
+            android:backgroundTint="@color/green"
+            app:cornerRadius="0dp"/>
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Farm Experience Reservation" />
+        <Button
+            android:id="@+id/reservationButtonPart3"
+            android:layout_width="135dp"
+            android:layout_height="match_parent"
+            app:cornerRadius="0dp"
+            android:backgroundTint="@color/light_grey"
+            android:textColor="@color/black"
+            android:text="Reservation"/>
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Farm Subscription" />
+        <Button
+            android:id="@+id/subscriptionButtonPart3"
+            android:layout_width="135dp"
+            android:layout_height="match_parent"
+            app:cornerRadius="0dp"
+            android:backgroundTint="@color/light_grey"
+            android:textColor="@color/black"
+            android:text="Subscription"/>
 
-    </com.google.android.material.tabs.TabLayout>
+    </LinearLayout>
 
-    <androidx.viewpager2.widget.ViewPager2
+    <FrameLayout
         android:id="@+id/viewPageMainPart3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
