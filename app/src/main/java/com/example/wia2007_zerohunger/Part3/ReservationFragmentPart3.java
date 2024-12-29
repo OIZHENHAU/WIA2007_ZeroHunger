@@ -4,6 +4,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -68,6 +70,20 @@ public class ReservationFragmentPart3 extends Fragment {
             public boolean onQueryTextChange(String newText) {
                 filterList(newText);
                 return true;
+            }
+        });
+
+        buttonBookingP3F2 = view.findViewById(R.id.buttonBookingP3F2);
+
+        buttonBookingP3F2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager = getParentFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                ReservationBookingFragmentPart3 reservationFragmentBookingPart3 = new ReservationBookingFragmentPart3();
+                fragmentTransaction.replace(R.id.viewPageMainPart3, reservationFragmentBookingPart3);
+                fragmentTransaction.commit();
             }
         });
 
