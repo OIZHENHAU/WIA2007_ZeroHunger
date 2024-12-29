@@ -44,10 +44,15 @@ public class ConnectionAdapter extends RecyclerView.Adapter<ConnectionAdapter.Co
             holder.productImageView1Part3F1.setImageResource(R.drawable.sellapple);
             holder.productImageView2Part3F1.setImageResource(R.drawable.sellorange);
 
-        } else {
+        } else if (connectionImageId == 3) {
             holder.connectionImageViewP3F1.setImageResource(R.drawable.durian_forest);
             holder.productImageView1Part3F1.setImageResource(R.drawable.durian);
             holder.productImageView2Part3F1.setImageResource(R.drawable.musang_king);
+
+        } else {
+            holder.connectionImageViewP3F1.setImageResource(R.drawable.aeon_industry);
+            holder.productImageView1Part3F1.setImageResource(R.drawable.carrot_seeds);
+            holder.productImageView2Part3F1.setImageResource(R.drawable.brocoli_seeds);
         }
 
         holder.connectionNameTextViewP3F1.setText(currentConnection.getConnectionName());

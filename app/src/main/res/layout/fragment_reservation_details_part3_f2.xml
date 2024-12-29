@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Part3.ReservationDetailsFragmentPart3F2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonExperienceDetailsP3F2"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Experience"
+                android:layout_marginStart="3dp"
+                android:backgroundTint="@color/green"
+                app:cornerRadius="0dp"/>
+
+            <Button
+                android:id="@+id/buttonBookingDetailsP3F2"
+                android:layout_width="200dp"
+                android:text="Booking"
+                android:backgroundTint="@color/light_grey"
+                android:layout_marginStart="5dp"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                app:cornerRadius="0dp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageViewDetailsP3F2"
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_height="160dp"
+            android:background="@color/white"
+            android:src="@drawable/strawberry_picking"/>
+
+        <TextView
+            android:id="@+id/textViewNameDetailsP3F2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:text="Strawberry Picking"/>
+
+        <TextView
+            android:id="@+id/textViewDescriptionDetailsP3F2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textSize="17sp"
+            android:layout_marginStart="10dp"
+            android:text="Enjoy strawberry picking experience at strawberry farm!"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"
+                android:text="Location: "/>
+
+            <TextView
+                android:id="@+id/textViewLocationDetailsP3F2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="42nd Mile, Kea Farm, 39100, Malaysia"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Rating: "/>
+
+            <TextView
+                android:id="@+id/textViewRatingDetailsP3F2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="5"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:src="@drawable/star"/>
+
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Select Date: "/>
+
+            <EditText
+                android:id="@+id/bookingDateDetailsP3F2"
+                android:layout_width="200dp"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:hint="dd/mm/yy"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Select Time Slot: "/>
+
+            <EditText
+                android:id="@+id/bookingTimeSlotsP3F2"
+                android:layout_width="200dp"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:hint="9.00 AM - 11.00 AM"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Number of Participants: "/>
+
+            <EditText
+                android:id="@+id/bookingNumParticipantsP3F2"
+                android:layout_width="200dp"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:hint="1 - 30"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/backButtonDetailsP3F2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/green"
+                android:text="Back"
+                android:layout_marginEnd="10dp"/>
+
+            <Button
+                android:id="@+id/submitButtonDetailsP3F2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/green"
+                android:layout_marginStart="10dp"
+                android:text="Submit"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

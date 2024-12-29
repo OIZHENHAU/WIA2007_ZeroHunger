@@ -17,7 +17,8 @@
             android:id="@+id/imageViewPart3F2"
             android:layout_width="170dp"
             android:layout_height="150dp"
-            android:layout_margin="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
             android:src="@drawable/strawberry_picking"/>
 
         <LinearLayout

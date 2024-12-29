@@ -6,6 +6,47 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/backgroundp3"
     tools:context=".Part3.ConnectionFragmentFilterPart3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/background_search1"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.appcompat.widget.SearchView
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                app:queryHint="Search here...."
+                android:inputType="text"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                app:iconifiedByDefault="false"/>
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="3dp"
+                app:srcCompat="@drawable/filter" />
+
+        </LinearLayout>
+
+    </LinearLayout>
     
     <LinearLayout
         android:layout_width="300dp"

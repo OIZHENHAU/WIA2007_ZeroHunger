@@ -19,6 +19,7 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/buttonExperienceP3F2"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:text="Experience"
@@ -27,10 +28,12 @@
                 app:cornerRadius="0dp"/>
 
             <Button
+                android:id="@+id/buttonBookingP3F2"
                 android:layout_width="200dp"
                 android:text="Booking"
-                android:backgroundTint="@color/green"
+                android:backgroundTint="@color/light_grey"
                 android:layout_marginStart="5dp"
+                android:textColor="@color/black"
                 android:layout_height="wrap_content"
                 app:cornerRadius="0dp" />
 
@@ -55,18 +58,18 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
-                <EditText
-                    android:id="@+id/editTextFarmerReservation"
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/editTextFarmerConnectionP3F2"
                     android:layout_width="0dp"
                     android:layout_height="48dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@android:color/transparent"
                     android:gravity="center"
-                    android:hint="Enter Reservation"
+                    app:queryHint="Search here...."
                     android:inputType="text"
                     android:singleLine="true"
                     android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                    android:textColorHint="@color/black"
+                    app:iconifiedByDefault="false"/>
 
                 <ImageView
                     android:id="@+id/searchP3F2"
@@ -74,13 +77,14 @@
                     android:layout_height="36dp"
                     android:layout_gravity="center_vertical"
                     android:layout_margin="3dp"
-                    app:srcCompat="@drawable/icon_search" />
+                    app:srcCompat="@drawable/filter" />
 
             </LinearLayout>
 
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewP3F2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"

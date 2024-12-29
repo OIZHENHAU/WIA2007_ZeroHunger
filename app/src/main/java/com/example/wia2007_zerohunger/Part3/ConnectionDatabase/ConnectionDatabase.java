@@ -47,11 +47,13 @@ public abstract class ConnectionDatabase extends RoomDatabase {
                 @Override
                 public void run() {
                     connectionDao.insert(new Connection(1, "Happy Farm", 13.5,
-                            "Vegetables", 1, 2.5, 1, 5.6));
+                            "Vegetable", 1, 2.5, 1, 5.6));
                     connectionDao.insert(new Connection(2, "Fresh Supermarket", 21.3,
-                            "Fruits", 2, 3.9, 2, 4.9));
-                    connectionDao.insert(new Connection(3, "Durian Forest", 57.8,
-                            "Desserts", 3, 69.9, 3, 89.9));
+                            "Fruit", 2, 3.9, 2, 4.9));
+                    connectionDao.insert(new Connection(3, "Durian Orchard", 57.8,
+                            "Dessert", 3, 69.9, 3, 89.9));
+                    connectionDao.insert(new Connection(4,"TMG Industry", 104.5,
+                            "Vegetable", 4, 29.5, 4, 55.6));
 
                 }
             });
