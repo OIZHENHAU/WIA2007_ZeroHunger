@@ -56,6 +56,7 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
         holder.locationTextViewP3F2.setText(currentReservation.getReservationName());
         holder.descriptionTextViewP3F2.setText(currentReservation.getReservationDescription());
         holder.ratingTextViewP3F2.setText(String.valueOf(currentReservation.getRating()));
+        holder.priceTextViewP3F2.setText(String.valueOf(currentReservation.getPrice()));
 
     }
 
@@ -76,7 +77,7 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
     public class ReservationHolder extends RecyclerView.ViewHolder {
 
         ImageView imageViewPart3F2;
-        TextView locationTextViewP3F2, descriptionTextViewP3F2, ratingTextViewP3F2;;
+        TextView locationTextViewP3F2, descriptionTextViewP3F2, ratingTextViewP3F2, priceTextViewP3F2;
 
         public ReservationHolder(@NonNull View itemView) {
             super(itemView);
@@ -86,6 +87,7 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
             locationTextViewP3F2 = itemView.findViewById(R.id.locationTextViewP3F2);
             descriptionTextViewP3F2 = itemView.findViewById(R.id.descriptionTextViewP3F2);
             ratingTextViewP3F2 = itemView.findViewById(R.id.ratingTextViewP3F2);
+            priceTextViewP3F2 = itemView.findViewById(R.id.priceTextViewP3F2);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

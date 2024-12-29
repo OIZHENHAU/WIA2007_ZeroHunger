@@ -12,13 +12,15 @@ public class Reservation {
     private double rating;
     private int imageId;
     private String location;
+    private double price;
 
-    public Reservation(String reservationName, String reservationDescription, double rating, int imageId, String location) {
+    public Reservation(String reservationName, String reservationDescription, double rating, int imageId, String location, double price) {
         this.reservationName = reservationName;
         this.reservationDescription = reservationDescription;
         this.rating = rating;
         this.imageId = imageId;
         this.location = location;
+        this.price = price;
     }
 
     public int getReservationId() {
@@ -67,5 +69,13 @@ public class Reservation {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }

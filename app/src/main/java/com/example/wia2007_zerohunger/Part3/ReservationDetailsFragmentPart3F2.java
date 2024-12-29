@@ -8,6 +8,8 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,7 +32,7 @@ import java.util.List;
 public class ReservationDetailsFragmentPart3F2 extends Fragment {
     ImageView imageViewDetailsP3F2;
     TextView textViewNameDetailsP3F2, textViewDescriptionDetailsP3F2, textViewLocationDetailsP3F2;
-    TextView textViewRatingDetailsP3F2;
+    TextView textViewRatingDetailsP3F2, textViewPriceDetailsP3F2, totalAmountDetailsP3F2;
     EditText bookingDateDetailsP3F2, bookingTimeSlotsP3F2, bookingNumParticipantsP3F2;
     ReservationViewModel reservationViewModel;
     ResBookingViewModel resBookingViewModel;
@@ -50,6 +52,8 @@ public class ReservationDetailsFragmentPart3F2 extends Fragment {
         textViewDescriptionDetailsP3F2 = view.findViewById(R.id.textViewDescriptionDetailsP3F2);
         textViewLocationDetailsP3F2 = view.findViewById(R.id.textViewLocationDetailsP3F2);
         textViewRatingDetailsP3F2 = view.findViewById(R.id.textViewRatingDetailsP3F2);
+        textViewPriceDetailsP3F2 = view.findViewById(R.id.textViewPriceDetailsP3F2);
+        totalAmountDetailsP3F2 = view.findViewById(R.id.totalAmountDetailsP3F2);
 
         //Edit Text
         bookingDateDetailsP3F2 = view.findViewById(R.id.bookingDateDetailsP3F2);
@@ -82,10 +86,38 @@ public class ReservationDetailsFragmentPart3F2 extends Fragment {
                         textViewDescriptionDetailsP3F2.setText(reservation.getReservationDescription());
                         textViewLocationDetailsP3F2.setText(reservation.getLocation());
                         textViewRatingDetailsP3F2.setText(String.valueOf(reservation.getRating()));
+                        textViewPriceDetailsP3F2.setText(String.valueOf(reservation.getPrice()));
 
                     }
 
                 }
+            }
+        });
+
+        bookingNumParticipantsP3F2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (s != null && s.length() > 0) {
+                    double price = Double.parseDouble(textViewPriceDetailsP3F2.getText().toString());
+                    int numParticipants = Integer.parseInt(s.toString());
+                    double totalAmount = price * numParticipants;
+
+                    totalAmountDetailsP3F2.setText(String.valueOf(totalAmount));
+
+                } else {
+                    totalAmountDetailsP3F2.setText("-");
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
 
