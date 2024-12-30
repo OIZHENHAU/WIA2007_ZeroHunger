@@ -34,20 +34,20 @@
                 app:layout_constraintStart_toStartOf="parent">
 
                 <EditText
-                    android:id="@+id/editTextFarmerReservation"
+                    android:id="@+id/editTextFarmerSubscriptionP3F3"
                     android:layout_width="0dp"
                     android:layout_height="48dp"
                     android:layout_weight="1"
                     android:backgroundTint="@android:color/transparent"
                     android:gravity="center"
-                    android:hint="Enter Reservation"
+                    android:hint="Search here ...."
                     android:inputType="text"
                     android:singleLine="true"
                     android:textColor="@color/black"
                     android:textColorHint="@color/black" />
 
                 <ImageView
-                    android:id="@+id/searchP3F2"
+                    android:id="@+id/searchP3F3"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:layout_gravity="center_vertical"
@@ -64,6 +64,7 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/buttonSubscriptionPlanP3F3"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:text="Subscription Plan"
@@ -72,9 +73,11 @@
                 app:cornerRadius="0dp"/>
 
             <Button
+                android:id="@+id/mySubscriptionPlanP3F3"
                 android:layout_width="200dp"
                 android:text="My Subscription"
-                android:backgroundTint="@color/green"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/light_grey"
                 android:layout_marginStart="5dp"
                 android:layout_height="wrap_content"
                 app:cornerRadius="0dp" />
@@ -82,6 +85,7 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewP3F3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
