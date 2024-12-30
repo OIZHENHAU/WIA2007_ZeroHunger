@@ -44,15 +44,20 @@ public abstract class SubscriptionDatabase extends RoomDatabase {
                 public void run() {
 
                     subscriptionDao.insert(new Subscription("Cabbage",1,
-                            "Vegetables", 20, 35));
+                            "Vegetable", "Jalan 20/16, Taman Paramount, 46300 Petaling Jaya, Selangor",
+                            20, 35));
                     subscriptionDao.insert(new Subscription("Kangkung", 2,
-                            "Vegetables", 13, 30));
+                            "Vegetable", "S33, Second Floor Encorp Strand Mall, Kota Damansara, 47810 Petaling Jaya, Selangor",
+                            13, 30));
                     subscriptionDao.insert(new Subscription("Carrot", 3,
-                            "Vegetables", 15, 25));
+                            "Vegetable", "Jln Bukit Bintang, Bukit Bintang, 55100 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+                            15, 25));
                     subscriptionDao.insert(new Subscription("Banana", 4,
-                            "Fruits", 20, 35));
+                            "Fruit", "Jalan 1/127 Basement 2, Off Jalan Kuchai Lama Kuchai Entrepreneurs Park 57100 Kuala Lumpur Malaysia",
+                            20, 35));
                     subscriptionDao.insert(new Subscription("Fresh Milk", 5,
-                            "Product", 40, 65));
+                            "Product", "No. 20, Jalan Ss24/13 47301 Petaling Jaya, Selangor Malaysia",
+                            40, 65));
 
                 }
             });

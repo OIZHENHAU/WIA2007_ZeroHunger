@@ -10,12 +10,14 @@ public class Subscription {
     private String subscriptionName;
     private int subscriptionImageId;
     private String subscriptionCategory;
+    private String subscriptionLocation;
     private double weeklyPrice;
     private double monthlyPrice;
 
-    public Subscription(String subscriptionName, int subscriptionImageId, String subscriptionCategory,
+    public Subscription(String subscriptionName, int subscriptionImageId, String subscriptionCategory, String subscriptionLocation,
                         double weeklyPrice, double monthlyPrice) {
         this.subscriptionName = subscriptionName;
+        this.subscriptionLocation = subscriptionLocation;
         this.subscriptionImageId = subscriptionImageId;
         this.subscriptionCategory = subscriptionCategory;
         this.weeklyPrice = weeklyPrice;
@@ -52,6 +54,14 @@ public class Subscription {
 
     public void setSubscriptionCategory(String subscriptionCategory) {
         this.subscriptionCategory = subscriptionCategory;
+    }
+
+    public String getSubscriptionLocation() {
+        return subscriptionLocation;
+    }
+
+    public void setSubscriptionLocation(String subscriptionLocation) {
+        this.subscriptionLocation = subscriptionLocation;
     }
 
     public double getWeeklyPrice() {

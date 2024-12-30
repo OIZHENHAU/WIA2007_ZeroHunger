@@ -33,18 +33,18 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
-                <EditText
+                <androidx.appcompat.widget.SearchView
                     android:id="@+id/editTextFarmerSubscriptionP3F3"
                     android:layout_width="0dp"
                     android:layout_height="48dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@android:color/transparent"
                     android:gravity="center"
-                    android:hint="Search here ...."
+                    app:queryHint="Search here...."
                     android:inputType="text"
                     android:singleLine="true"
                     android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
+                    android:textColorHint="@color/black"
+                    app:iconifiedByDefault="false"/>
 
                 <ImageView
                     android:id="@+id/searchP3F3"
@@ -52,7 +52,7 @@
                     android:layout_height="36dp"
                     android:layout_gravity="center_vertical"
                     android:layout_margin="3dp"
-                    app:srcCompat="@drawable/icon_search" />
+                    app:srcCompat="@drawable/filter" />
 
             </LinearLayout>
 

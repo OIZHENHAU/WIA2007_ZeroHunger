@@ -45,7 +45,7 @@ public class SubscriptionAdapter extends RecyclerView.Adapter<SubscriptionAdapte
             holder.imageSubscriptionItemP3F3.setImageResource(R.drawable.carrot);
 
         } else if (imageId == 4) {
-            holder.imageSubscriptionItemP3F3.setImageResource(R.drawable.banana);
+            holder.imageSubscriptionItemP3F3.setImageResource(R.drawable.sellbanana);
 
         } else {
             holder.imageSubscriptionItemP3F3.setImageResource(R.drawable.milk);
