@@ -34,6 +34,8 @@ public class SubscriptionDetailsFragmentPart3 extends Fragment {
     Button prevButton;
     TextView totalAmountSubscriptionDetailsP3F3;
 
+    private int subscriptionCode;
+
     SubscriptionViewModel subscriptionViewModel;
 
     @Override
@@ -101,6 +103,8 @@ public class SubscriptionDetailsFragmentPart3 extends Fragment {
                     prevButton.setTextColor(getResources().getColor(R.color.black));
                 }
 
+                subscriptionCode = 1;
+
                 totalAmountSubscriptionDetailsP3F3.setText(textViewWeeklyPriceDetailsP3F3.getText());
 
                 prevButton = buttonWeeklyPriceDetailsP3F3;
@@ -117,6 +121,8 @@ public class SubscriptionDetailsFragmentPart3 extends Fragment {
                     prevButton.setBackgroundColor(getResources().getColor(R.color.light_grey));
                     prevButton.setTextColor(getResources().getColor(R.color.black));
                 }
+
+                subscriptionCode = 2;
 
                 totalAmountSubscriptionDetailsP3F3.setText(textViewMonthlyPriceDetailsP3F3.getText());
 
