@@ -15,7 +15,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.wia2007_zerohunger.Part3.SubBookingDatabase.SubBooking;
+import com.example.wia2007_zerohunger.Part3.SubBookingDatabase.SubBookingViewModel;
 import com.example.wia2007_zerohunger.Part3.SubscriptionDatabase.Subscription;
 import com.example.wia2007_zerohunger.Part3.SubscriptionDatabase.SubscriptionViewModel;
 import com.example.wia2007_zerohunger.R;
@@ -34,9 +37,12 @@ public class SubscriptionDetailsFragmentPart3 extends Fragment {
     Button prevButton;
     TextView totalAmountSubscriptionDetailsP3F3;
 
-    private int subscriptionCode;
+    private int subscriptionPlanCode;
+
+    private int imageID;
 
     SubscriptionViewModel subscriptionViewModel;
+    SubBookingViewModel subBookingViewModel;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -68,6 +74,8 @@ public class SubscriptionDetailsFragmentPart3 extends Fragment {
 
         subscriptionViewModel = new ViewModelProvider.AndroidViewModelFactory(getActivity().getApplication())
                 .create(SubscriptionViewModel.class);
+        subBookingViewModel = new ViewModelProvider.AndroidViewModelFactory(getActivity().getApplication())
+                .create(SubBookingViewModel.class);
 
         subscriptionViewModel.getAllSubscriptions().observe(getViewLifecycleOwner(), new Observer<List<Subscription>>() {
             @Override
@@ -75,7 +83,7 @@ public class SubscriptionDetailsFragmentPart3 extends Fragment {
                 for (Subscription subscription : subscriptions) {
                     if (subscription.getSubscriptionId() == subscriptionID) {
 
-                        int imageID = subscription.getSubscriptionImageId();
+                        imageID = subscription.getSubscriptionImageId();
 
                         setImageID(imageID);
 
@@ -103,7 +111,7 @@ public class SubscriptionDetailsFragmentPart3 extends Fragment {
                     prevButton.setTextColor(getResources().getColor(R.color.black));
                 }
 
-                subscriptionCode = 1;
+                subscriptionPlanCode = 1;
 
                 totalAmountSubscriptionDetailsP3F3.setText(textViewWeeklyPriceDetailsP3F3.getText());
 
@@ -122,7 +130,7 @@ public class SubscriptionDetailsFragmentPart3 extends Fragment {
                     prevButton.setTextColor(getResources().getColor(R.color.black));
                 }
 
-                subscriptionCode = 2;
+                subscriptionPlanCode = 2;
 
                 totalAmountSubscriptionDetailsP3F3.setText(textViewMonthlyPriceDetailsP3F3.getText());
 
@@ -143,6 +151,27 @@ public class SubscriptionDetailsFragmentPart3 extends Fragment {
             }
         });
 
+        subscribeButtonSubscriptionDetailsP3F3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String subBookingName = textViewSubscriptionNameDetailsP3F3.getText().toString();
+                int subBookingImageId = imageID;
+                double subBookingPrice = Double.parseDouble(totalAmountSubscriptionDetailsP3F3.getText().toString());
+
+                SubBooking newSubBooking = new SubBooking(subBookingName, subBookingImageId, subscriptionPlanCode, subBookingPrice);
+                subBookingViewModel.insert(newSubBooking);
+
+                Toast.makeText(getContext(), "Subscription Successful", Toast.LENGTH_SHORT).show();
+
+                FragmentManager fragmentManager = getParentFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                SubscriptionFragmentPart3 subscriptionFragmentPart3 = new SubscriptionFragmentPart3();
+                fragmentTransaction.replace(R.id.viewPageMainPart3, subscriptionFragmentPart3);
+                fragmentTransaction.commit();
+
+            }
+        });
 
         return view;
 

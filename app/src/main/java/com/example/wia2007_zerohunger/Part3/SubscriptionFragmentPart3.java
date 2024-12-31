@@ -4,6 +4,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -42,6 +44,9 @@ public class SubscriptionFragmentPart3 extends Fragment {
         recyclerViewP3F3.setLayoutManager(new LinearLayoutManager(getContext()));
 
         editTextFarmerSubscriptionP3F3 = view.findViewById(R.id.editTextFarmerSubscriptionP3F3);
+
+        buttonSubscriptionPlanP3F3 = view.findViewById(R.id.buttonSubscriptionPlanP3F3);
+        buttonMySubscriptionPlanP3F3 = view.findViewById(R.id.mySubscriptionPlanP3F3);
 
         SubscriptionAdapter subscriptionAdapter = new SubscriptionAdapter();
         recyclerViewP3F3.setAdapter(subscriptionAdapter);
@@ -83,6 +88,18 @@ public class SubscriptionFragmentPart3 extends Fragment {
             public boolean onQueryTextChange(String newText) {
                 filterList(newText);
                 return true;
+            }
+        });
+
+        buttonMySubscriptionPlanP3F3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager = getParentFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                SubBookingFragmentPart3F3 subBookingFragment = new SubBookingFragmentPart3F3();
+                fragmentTransaction.replace(R.id.viewPageMainPart3, subBookingFragment);
+                fragmentTransaction.commit();
             }
         });
 
