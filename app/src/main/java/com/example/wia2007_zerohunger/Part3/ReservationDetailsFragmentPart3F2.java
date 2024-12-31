@@ -102,15 +102,23 @@ public class ReservationDetailsFragmentPart3F2 extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (s != null && s.length() > 0) {
-                    double price = Double.parseDouble(textViewPriceDetailsP3F2.getText().toString());
-                    int numParticipants = Integer.parseInt(s.toString());
-                    double totalAmount = price * numParticipants;
+                try {
+                    Integer.parseInt(s.toString());
+                    bookingNumParticipantsP3F2.setError(null);
 
-                    totalAmountDetailsP3F2.setText(String.valueOf(totalAmount));
+                    if (s != null && s.length() > 0) {
+                        double price = Double.parseDouble(textViewPriceDetailsP3F2.getText().toString());
+                        int numParticipants = Integer.parseInt(s.toString());
+                        double totalAmount = price * numParticipants;
 
-                } else {
-                    totalAmountDetailsP3F2.setText("-");
+                        totalAmountDetailsP3F2.setText(String.valueOf(totalAmount));
+
+                    } else {
+                        totalAmountDetailsP3F2.setText("-");
+                    }
+
+                } catch (NumberFormatException e) {
+                    Toast.makeText(getContext(), "Please enter a valid number of participants.", Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -146,6 +154,7 @@ public class ReservationDetailsFragmentPart3F2 extends Fragment {
 
             }
         });
+
 
         submitButtonDetailsP3F2.setOnClickListener(new View.OnClickListener() {
             @Override

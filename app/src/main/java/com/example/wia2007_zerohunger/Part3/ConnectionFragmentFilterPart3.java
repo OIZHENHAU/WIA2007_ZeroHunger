@@ -12,6 +12,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +41,51 @@ public class ConnectionFragmentFilterPart3 extends Fragment {
 
         searchButtonFilterFragmentP3F1 = view.findViewById(R.id.searchButtonFilterFragmentP3F1);
 
+        distanceFilterFragmentP3F1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                try {
+                    Double.parseDouble(s.toString());
+                    distanceFilterFragmentP3F1.setError(null);
+
+                } catch (NumberFormatException e) {
+                    Toast.makeText(getContext(), "Please enter a valid distance", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        priceFilterFragmentP3F1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                try {
+                    Double.parseDouble(s.toString());
+                    priceFilterFragmentP3F1.setError(null);
+
+                } catch (NumberFormatException e) {
+                    Toast.makeText(getContext(), "Please enter a valid price", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
         searchButtonFilterFragmentP3F1.setOnClickListener(new View.OnClickListener() {
             @Override

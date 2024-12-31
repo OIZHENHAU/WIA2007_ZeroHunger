@@ -61,6 +61,14 @@ public class SubscriptionFragmentPart3 extends Fragment {
             }
         });
 
+        if (getArguments() != null) {
+            double searchPrice = getArguments().getDouble("searchPrice");
+            String searchProduct = getArguments().getString("searchProduct");
+
+            filterListBasedOnCondition(searchPrice, searchProduct);
+
+        }
+
         subscriptionAdapter.setOnItemClickListener(new SubscriptionAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Subscription subscription) {
@@ -103,6 +111,20 @@ public class SubscriptionFragmentPart3 extends Fragment {
             }
         });
 
+        searchP3F3 = view.findViewById(R.id.searchP3F3);
+
+        searchP3F3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager = getParentFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                SubscriptionFilterFragmentPart3 subscriptionFragmentFilterPart3 = new SubscriptionFilterFragmentPart3();
+                fragmentTransaction.replace(R.id.viewPageMainPart3, subscriptionFragmentFilterPart3);
+                fragmentTransaction.commit();
+            }
+        });
+
         return view;
     }
 
@@ -130,6 +152,39 @@ public class SubscriptionFragmentPart3 extends Fragment {
 
                 } else {
                     Toast.makeText(getContext(), "Data Found", Toast.LENGTH_SHORT).show();
+                    subscriptionAdapter.setSubscriptions(filterList);
+                    recyclerViewP3F3.setAdapter(subscriptionAdapter);
+                }
+            }
+        });
+    }
+
+    public void filterListBasedOnCondition(double searchPrice, String searchProduct) {
+        List<Subscription> filterList = new ArrayList<>();
+
+        subscriptionViewModel.getAllSubscriptions().observe(getViewLifecycleOwner(), new Observer<List<Subscription>>() {
+            @Override
+            public void onChanged(List<Subscription> subscriptions) {
+
+                for(Subscription subscription : subscriptions) {
+                    double weeklyPrice = subscription.getWeeklyPrice();
+                    double monthlyPrice = subscription.getMonthlyPrice();
+                    String subscriptionCategory = subscription.getSubscriptionCategory().toLowerCase();
+
+                    if (searchProduct.toLowerCase().equals(subscriptionCategory) &&
+                            (searchPrice >= weeklyPrice || searchPrice >= monthlyPrice)) {
+                        filterList.add(subscription);
+                    }
+                }
+
+                SubscriptionAdapter subscriptionAdapter = new SubscriptionAdapter();
+
+                if (filterList.isEmpty()) {
+                    subscriptionAdapter.setSubscriptions(subscriptions);
+                    recyclerViewP3F3.setAdapter(subscriptionAdapter);
+
+                } else {
+                    Toast.makeText(getContext(), "Subscription Found", Toast.LENGTH_SHORT).show();
                     subscriptionAdapter.setSubscriptions(filterList);
                     recyclerViewP3F3.setAdapter(subscriptionAdapter);
                 }

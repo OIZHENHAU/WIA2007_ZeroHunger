@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,6 +57,16 @@ public class ReservationFragmentPart3 extends Fragment {
                 reservationAdapter.setReservations(reservations);
             }
         });
+
+        if (getArguments() != null) {
+            double reservationRating = getArguments().getDouble("reservationRating");
+            double reservationPrice = getArguments().getDouble("reservationPrice");
+
+            Log.d("ReservationFragmentPart3", "Rating: " + reservationRating);
+            Log.d("ReservationFragmentPart3", "Price: " + reservationPrice);
+
+            filterListBasedOnCondition(reservationRating, reservationPrice);
+        }
 
         editTextFarmerConnectionP3F2 = view.findViewById(R.id.editTextFarmerConnectionP3F2);
         editTextFarmerConnectionP3F2.clearFocus();
@@ -103,6 +114,20 @@ public class ReservationFragmentPart3 extends Fragment {
             }
         });
 
+        searchP3F2 = view.findViewById(R.id.searchP3F2);
+
+        searchP3F2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager = getParentFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                ReservationFragmentFilterPart3 reservationFragmentFilterPart3 = new ReservationFragmentFilterPart3();
+                fragmentTransaction.replace(R.id.viewPageMainPart3, reservationFragmentFilterPart3);
+                fragmentTransaction.commit();
+            }
+        });
+
         return view;
     }
 
@@ -130,6 +155,42 @@ public class ReservationFragmentPart3 extends Fragment {
                 } else {
                     Toast.makeText(getContext(), "Data Found", Toast.LENGTH_SHORT).show();
                     reservationAdapter.setReservations(filteredList);
+                    recyclerViewP3F2.setAdapter(reservationAdapter);
+                }
+            }
+        });
+    }
+
+    public void filterListBasedOnCondition(double reservationRating, double reservationPrice) {
+        List<Reservation> filterList = new ArrayList<>();
+
+        reservationViewModel.getAllReservations().observe(getViewLifecycleOwner(), new Observer<List<Reservation>>() {
+            @Override
+            public void onChanged(List<Reservation> reservations) {
+
+                for(Reservation reservation : reservations) {
+                    double reservationRating1 = reservation.getRating();
+                    double reservationPrice1 = reservation.getPrice();
+
+                    Log.d("reservationRating1", String.valueOf(reservationRating1));
+                    Log.d("reservationPrice1", String.valueOf(reservationPrice1));
+
+                    if (reservationRating >= reservationRating1 && reservationPrice >= reservationPrice1) {
+                        filterList.add(reservation);
+                    }
+                }
+
+                ReservationAdapter reservationAdapter = new ReservationAdapter();
+
+                Log.d("Filter List Size", String.valueOf(filterList.size()));
+
+                if (filterList.isEmpty()) {
+                    reservationAdapter.setReservations(reservations);
+                    recyclerViewP3F2.setAdapter(reservationAdapter);
+
+                } else {
+                    Toast.makeText(getContext(), "Reservation Found", Toast.LENGTH_SHORT).show();
+                    reservationAdapter.setReservations(filterList);
                     recyclerViewP3F2.setAdapter(reservationAdapter);
                 }
             }
