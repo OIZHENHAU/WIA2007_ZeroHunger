@@ -32,6 +32,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class SignUp extends AppCompatActivity {
 
     EditText username, email, password;
@@ -64,13 +67,19 @@ public class SignUp extends AppCompatActivity {
                 String userEmail = email.getText().toString();
                 String userPassword = password.getText().toString();
 
-                userAccountViewModel = new ViewModelProvider(SignUp.this).get(UserAccountViewModel.class);
+                if (isValidPassword(userPassword)) {
+                    userAccountViewModel = new ViewModelProvider(SignUp.this).get(UserAccountViewModel.class);
 
-                UserAccount newUserAccount = new UserAccount(userName, userEmail, userPassword, 0);
-                currentUserAccount = newUserAccount;
-                userAccountViewModel.insert(newUserAccount);
+                    UserAccount newUserAccount = new UserAccount(userName, userEmail, userPassword, 100);
+                    currentUserAccount = newUserAccount;
+                    userAccountViewModel.insert(newUserAccount);
 
-                signUpFirebase(userName, userEmail, userPassword);
+                    signUpFirebase(userName, userEmail, userPassword);
+
+                } else {
+                    Toast.makeText(SignUp.this, "Password must be 8-12 characters long, contain a capital letter, and include @",
+                            Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -95,6 +104,14 @@ public class SignUp extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    public boolean isValidPassword(String password) {
+        // Regular expression to check password requirements
+        String passwordPattern = "^(?=.*[A-Z])(?=.*[@]).{8,12}$";
+        Pattern pattern = Pattern.compile(passwordPattern);
+        Matcher matcher = pattern.matcher(password);
+        return matcher.matches();
     }
 
 }

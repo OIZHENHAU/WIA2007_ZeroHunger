@@ -21,20 +21,20 @@
         android:id="@+id/textViewSignUpP1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="316dp"
         android:text="Welcome To ZeroHungerHub"
-        android:textSize="30dp"
+        android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextSignUpName"
-        android:layout_width="400dp"
+        android:layout_width="300dp"
         android:layout_height="48dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="412dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="400dp"
         android:ems="10"
         android:gravity="center"
         android:hint="Enter Username"
@@ -44,10 +44,10 @@
 
     <EditText
         android:id="@+id/editTextSignUpEmail"
-        android:layout_width="400dp"
+        android:layout_width="300dp"
         android:layout_height="48dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="468dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="455dp"
         android:ems="10"
         android:gravity="center"
         android:hint="Enter Your Email"
@@ -57,14 +57,13 @@
 
     <EditText
         android:id="@+id/editTextSignUpPassword"
-        android:layout_width="400dp"
+        android:layout_width="300dp"
         android:layout_height="48dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="524dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="510dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="Enter Your Password"
-        android:inputType="numberPassword"
+        android:hint="Enter Password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

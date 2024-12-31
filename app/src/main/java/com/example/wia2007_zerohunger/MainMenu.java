@@ -38,6 +38,7 @@ import com.example.wia2007_zerohunger.Part5.MainActivityPart5S1;
 import com.example.wia2007_zerohunger.UserDatabase.UserAccount;
 import com.example.wia2007_zerohunger.UserDatabase.UserAccountViewModel;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 
 public class MainMenu extends AppCompatActivity {
@@ -45,7 +46,7 @@ public class MainMenu extends AppCompatActivity {
     TextView nickName;
     Toolbar toolbar;
     Button agricultureSupportButton, povertyAssistanceButton, educationTrainingButtonPart4;
-    private String currentEmail;
+    private String currentUserEmail;
     private UserAccountViewModel userAccountViewModel;
     private UserAccount currentUserAccount;
 
@@ -60,10 +61,12 @@ public class MainMenu extends AppCompatActivity {
         });
 
         Intent intent = getIntent();
-        String nickNameString = intent.getStringExtra("nickName");
-        String emailString = intent.getStringExtra("email");
 
-        currentEmail = emailString;
+        FirebaseAuth currentAuth = FirebaseAuth.getInstance();
+        currentUserEmail = currentAuth.getCurrentUser().getEmail();
+
+        Log.d("currentUserEmail", currentUserEmail);
+
 
         nickName = findViewById(R.id.textViewUserName);
         //nickName.setText("Welcome, " + nickNameString + "!");
@@ -81,7 +84,7 @@ public class MainMenu extends AppCompatActivity {
         });
          */
 
-        userAccountViewModel.getUserAccountByEmail(currentEmail).observe(MainMenu.this, new Observer<UserAccount>() {
+        userAccountViewModel.getUserAccountByEmail(currentUserEmail).observe(MainMenu.this, new Observer<UserAccount>() {
 
             @Override
             public void onChanged(UserAccount userAccount) {
@@ -107,8 +110,6 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenu.this, MainActivityP1.class);
-                intent.putExtra("nickName", nickNameString);
-                intent.putExtra("email", currentEmail);
                 startActivity(intent);
             }
         });

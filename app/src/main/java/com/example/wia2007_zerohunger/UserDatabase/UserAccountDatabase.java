@@ -44,9 +44,6 @@ public abstract class UserAccountDatabase extends RoomDatabase {
             executorService.execute(new Runnable() {
                 @Override
                 public void run() {
-                    userAccountDao.insert(new UserAccount("zhenhau", "zhenhau8072@gmail.com",
-                            "123456", 0));
-
                 }
             });
         }
