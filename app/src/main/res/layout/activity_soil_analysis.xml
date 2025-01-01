@@ -6,12 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Part1.soil_analysis.SoilAnalysisActivity"
-    android:background="@drawable/main_background">
+    android:background="@drawable/purple_farmer_background">
 
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="300dp"
-        android:layout_height="70dp"
+        android:layout_height="80dp"
         android:layout_marginStart="58dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/background_search1"
@@ -19,8 +19,8 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="8dp"
             android:src="@drawable/soil_analysis_icon" />
@@ -66,7 +66,7 @@
                 android:text="Nitrogen"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:textColor="@color/purple"/>
+                android:textColor="@color/white"/>
 
             <TextView
                 android:layout_width="200dp"
@@ -74,7 +74,7 @@
                 android:text="Phosphorus"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:textColor="@color/purple"/>
+                android:textColor="@color/white"/>
 
         </LinearLayout>
 
@@ -89,7 +89,7 @@
             <FrameLayout
                 android:layout_width="200dp"
                 android:layout_height="50dp"
-                android:background="@drawable/your_rounded_shape">
+                android:background="@drawable/background_search1">
 
                 <EditText
                     android:id="@+id/soilNitrogenEditText"
@@ -102,7 +102,7 @@
             <FrameLayout
                 android:layout_width="200dp"
                 android:layout_height="50dp"
-                android:background="@drawable/your_rounded_shape">
+                android:background="@drawable/background_search1">
 
                 <EditText
                     android:id="@+id/soilPhosphorusEditText"
@@ -125,7 +125,7 @@
                 android:text="Potassium"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:textColor="@color/purple"/>
+                android:textColor="@color/white"/>
 
             <TextView
                 android:layout_width="200dp"
@@ -133,7 +133,7 @@
                 android:text="PH Value"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:textColor="@color/purple"/>
+                android:textColor="@color/white"/>
 
         </LinearLayout>
 
@@ -148,7 +148,7 @@
             <FrameLayout
                 android:layout_width="200dp"
                 android:layout_height="50dp"
-                android:background="@drawable/your_rounded_shape">
+                android:background="@drawable/background_search1">
 
                 <EditText
                     android:id="@+id/soilPotassiumEditText"
@@ -161,7 +161,7 @@
             <FrameLayout
                 android:layout_width="200dp"
                 android:layout_height="50dp"
-                android:background="@drawable/your_rounded_shape">
+                android:background="@drawable/background_search1">
 
                 <EditText
                     android:id="@+id/soilPHValueEditText"
@@ -179,13 +179,13 @@
             android:text="Temperature"
             android:layout_margin="5dp"
             android:gravity="center"
-            android:textColor="@color/purple"
+            android:textColor="@color/white"
             android:textStyle="bold"/>
 
         <FrameLayout
             android:layout_width="400dp"
             android:layout_height="50dp"
-            android:background="@drawable/your_rounded_shape"
+            android:background="@drawable/background_search1"
             android:layout_margin="5dp">
 
             <EditText
@@ -202,13 +202,13 @@
             android:text="Humidity"
             android:layout_margin="5dp"
             android:gravity="center"
-            android:textColor="@color/purple"
+            android:textColor="@color/white"
             android:textStyle="bold"/>
 
         <FrameLayout
             android:layout_width="400dp"
             android:layout_height="50dp"
-            android:background="@drawable/your_rounded_shape"
+            android:background="@drawable/background_search1"
             android:layout_margin="5dp">
 
             <EditText
@@ -225,13 +225,13 @@
             android:text="Rainfall"
             android:layout_margin="5dp"
             android:gravity="center"
-            android:textColor="@color/purple"
+            android:textColor="@color/white"
             android:textStyle="bold"/>
 
         <FrameLayout
             android:layout_width="400dp"
             android:layout_height="50dp"
-            android:background="@drawable/your_rounded_shape"
+            android:background="@drawable/background_search1"
             android:layout_margin="5dp">
 
             <EditText
@@ -252,7 +252,7 @@
                 android:id="@+id/soilBackButton"
                 android:layout_width="190dp"
                 android:layout_height="50dp"
-                android:backgroundTint="@color/black"
+                android:backgroundTint="@color/purple"
                 android:text="Back"
                 android:layout_margin="5dp" />
 
@@ -260,7 +260,7 @@
                 android:id="@+id/soilSubmitButton"
                 android:layout_width="190dp"
                 android:layout_height="50dp"
-                android:backgroundTint="@color/black"
+                android:backgroundTint="@color/purple"
                 android:layout_margin="5dp"
                 android:text="Submit"/>
 
