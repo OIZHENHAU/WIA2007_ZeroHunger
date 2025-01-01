@@ -27,6 +27,9 @@
         android:theme="@style/Theme.WIA2007_ZeroHunger"
         tools:targetApi="31">
         <activity
+            android:name=".EditProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProfileActivity"
             android:exported="false" />
         <activity

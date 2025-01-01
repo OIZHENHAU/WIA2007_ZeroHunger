@@ -5,7 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/main_background"
     android:orientation="vertical"
     tools:context=".ProfileActivity">
 
@@ -35,7 +34,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="130dp"
-        android:background="@color/white"
+        android:background="@drawable/main_background"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBarProfileLayout">
@@ -184,23 +183,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="290dp"
-        android:layout_marginTop="165dp"
-        android:src="@drawable/agriculture"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="330dp"
-        android:layout_marginTop="130dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cottage" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
