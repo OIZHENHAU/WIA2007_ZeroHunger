@@ -77,7 +77,7 @@ public class SignUp extends AppCompatActivity {
                     signUpFirebase(userName, userEmail, userPassword);
 
                 } else {
-                    Toast.makeText(SignUp.this, "Password must be 8-12 characters long, contain a capital letter, and include @",
+                    Toast.makeText(SignUp.this, "Password must be 8-12 characters long, contain at least one capital letter, and a special character",
                             Toast.LENGTH_SHORT).show();
                 }
             }
@@ -108,7 +108,7 @@ public class SignUp extends AppCompatActivity {
 
     public boolean isValidPassword(String password) {
         // Regular expression to check password requirements
-        String passwordPattern = "^(?=.*[A-Z])(?=.*[@]).{8,12}$";
+        String passwordPattern = "^(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,12}$";
         Pattern pattern = Pattern.compile(passwordPattern);
         Matcher matcher = pattern.matcher(password);
         return matcher.matches();

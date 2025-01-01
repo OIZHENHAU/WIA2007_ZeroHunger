@@ -26,7 +26,7 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="Back"
-            android:backgroundTint="@color/black"/>
+            android:backgroundTint="@color/purple"/>
 
         <Button
             android:id="@+id/buttonGetDirectionP5S10"
@@ -34,7 +34,7 @@
             android:layout_marginStart="11dp"
             android:layout_height="wrap_content"
             android:text="Get Direction"
-            android:backgroundTint="@color/black"/>
+            android:backgroundTint="@color/purple"/>
 
     </LinearLayout>
 

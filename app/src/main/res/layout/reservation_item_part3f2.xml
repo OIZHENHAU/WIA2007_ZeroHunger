@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:textColor="@color/green"
+                android:textColor="@color/purple"
                 android:text="Strawberry Picking"/>
 
             <TextView
@@ -111,7 +111,7 @@
                     android:layout_width="90dp"
                     android:layout_height="40dp"
                     android:layout_marginStart="5dp"
-                    android:background="@color/green">
+                    android:background="@color/purple">
 
                     <TextView
                         android:layout_marginTop="10dp"
@@ -127,7 +127,7 @@
                     android:layout_width="90dp"
                     android:layout_height="40dp"
                     android:layout_marginStart="10dp"
-                    android:background="@color/green">
+                    android:background="@color/purple">
 
                     <TextView
                         android:layout_marginTop="10dp"

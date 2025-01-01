@@ -103,7 +103,7 @@ public class SubscriptionDetailsFragmentPart3 extends Fragment {
         buttonWeeklyPriceDetailsP3F3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                buttonWeeklyPriceDetailsP3F3.setBackgroundColor(getResources().getColor(R.color.green));
+                buttonWeeklyPriceDetailsP3F3.setBackgroundColor(getResources().getColor(R.color.purple));
                 buttonWeeklyPriceDetailsP3F3.setTextColor(getResources().getColor(R.color.white));
 
                 if (prevButton != null) {
@@ -122,7 +122,7 @@ public class SubscriptionDetailsFragmentPart3 extends Fragment {
         buttonMonthlyPriceDetailsP3F3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                buttonMonthlyPriceDetailsP3F3.setBackgroundColor(getResources().getColor(R.color.green));
+                buttonMonthlyPriceDetailsP3F3.setBackgroundColor(getResources().getColor(R.color.purple));
                 buttonMonthlyPriceDetailsP3F3.setTextColor(getResources().getColor(R.color.white));
 
                 if (prevButton != null) {

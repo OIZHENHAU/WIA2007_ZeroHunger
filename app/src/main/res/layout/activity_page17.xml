@@ -12,7 +12,7 @@
         android:id="@+id/page17_backBtnP2"
         android:layout_width="95dp"
         android:layout_height="45dp"
-        android:backgroundTint="#576AD7"
+        android:backgroundTint="@color/purple"
         android:text="Back"
         android:textColor="#FBFBFB"
         android:textSize="16sp"

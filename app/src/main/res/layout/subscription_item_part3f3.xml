@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                android:textColor="@color/green"
+                android:textColor="@color/purple"
                 android:text="Carrot"/>
 
             <LinearLayout
@@ -89,17 +89,17 @@
                 android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="20dp"
-                android:background="@color/green"
+                android:background="@color/purple"
                 android:layout_marginStart="85dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
-                    android:layout_marginTop="5dp"
                     android:layout_marginStart="12dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Select Plan"
                     android:textColor="@color/white"
-                    android:text="Select Plan"/>
+                    android:textSize="15sp" />
 
             </FrameLayout>
 

@@ -151,6 +151,7 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="648dp"
         android:text="Calculate"
+        android:backgroundTint="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -161,6 +162,7 @@
         android:layout_marginStart="200dp"
         android:layout_marginTop="648dp"
         android:text="Donate"
+        android:backgroundTint="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

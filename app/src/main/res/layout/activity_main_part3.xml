@@ -19,8 +19,8 @@
             android:layout_height="match_parent"
             android:text="Connection"
             android:layout_marginStart="3dp"
-            android:textColor="@color/light_grey"
-            android:backgroundTint="@color/green"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/purple"
             app:cornerRadius="0dp"/>
 
         <Button

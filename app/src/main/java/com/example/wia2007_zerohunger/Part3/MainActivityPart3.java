@@ -80,8 +80,8 @@ public class MainActivityPart3 extends AppCompatActivity {
                 prevButton.setBackgroundColor(getResources().getColor(R.color.light_grey));
                 prevButton.setTextColor(getResources().getColor(R.color.black));
 
-                connectionButtonPart3.setBackgroundColor(getResources().getColor(R.color.green));
-                connectionButtonPart3.setTextColor(getResources().getColor(R.color.light_grey));
+                connectionButtonPart3.setBackgroundColor(getResources().getColor(R.color.purple));
+                connectionButtonPart3.setTextColor(getResources().getColor(R.color.white));
 
                 prevButton = connectionButtonPart3;
 
@@ -101,8 +101,8 @@ public class MainActivityPart3 extends AppCompatActivity {
                 prevButton.setBackgroundColor(getResources().getColor(R.color.light_grey));
                 prevButton.setTextColor(getResources().getColor(R.color.black));
 
-                reservationButtonPart3.setBackgroundColor(getResources().getColor(R.color.green));
-                reservationButtonPart3.setTextColor(getResources().getColor(R.color.light_grey));
+                reservationButtonPart3.setBackgroundColor(getResources().getColor(R.color.purple));
+                reservationButtonPart3.setTextColor(getResources().getColor(R.color.white));
 
                 prevButton = reservationButtonPart3;
 
@@ -122,8 +122,8 @@ public class MainActivityPart3 extends AppCompatActivity {
                 prevButton.setBackgroundColor(getResources().getColor(R.color.light_grey));
                 prevButton.setTextColor(getResources().getColor(R.color.black));
 
-                subscriptionButtonPart3.setBackgroundColor(getResources().getColor(R.color.green));
-                subscriptionButtonPart3.setTextColor(getResources().getColor(R.color.light_grey));
+                subscriptionButtonPart3.setBackgroundColor(getResources().getColor(R.color.purple));
+                subscriptionButtonPart3.setTextColor(getResources().getColor(R.color.white));
 
                 prevButton = subscriptionButtonPart3;
             }

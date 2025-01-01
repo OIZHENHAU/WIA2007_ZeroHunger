@@ -11,12 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/backgroundp3">
+        android:background="@drawable/main_background">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/green">
+            android:background="@color/purple">
 
             <LinearLayout
                 android:id="@+id/linearLayoutSearchP3F1"

@@ -12,7 +12,6 @@
         android:id="@+id/page19_registerBtnP2"
         android:layout_width="130dp"
         android:layout_height="50dp"
-        android:backgroundTint="#576AD7"
         android:text="Register"
         android:textSize="18sp"
         app:cornerRadius="0dp"
@@ -36,7 +35,7 @@
             android:id="@+id/page19_aboutUsBtnP2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#AEEAF0"
+            android:backgroundTint="@color/light_grey"
             android:text="About us"
             android:textColor="#000000"
             app:cornerRadius="0dp" />
@@ -45,7 +44,7 @@
             android:id="@+id/page19_resourcesBtnP2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#AEEAF0"
+            android:backgroundTint="@color/light_grey"
             android:text="Resources"
             android:textColor="#000000"
             app:cornerRadius="0dp" />
@@ -54,16 +53,16 @@
             android:id="@+id/page19_donationBtnP2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#30D1E6"
+            android:backgroundTint="@color/purple"
             android:text="Donation"
-            android:textColor="#000000"
+            android:textColor="@color/white"
             app:cornerRadius="0dp" />
 
         <Button
             android:id="@+id/page19_getHelpBtnP2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#AEEAF0"
+            android:backgroundTint="@color/light_grey"
             android:text="Help"
             android:textColor="#000000"
             app:cornerRadius="0dp" />
@@ -73,7 +72,6 @@
         android:id="@+id/page19_readMoreBtnP2"
         android:layout_width="130dp"
         android:layout_height="48dp"
-        android:backgroundTint="#576AD7"
         android:text="Read more"
         android:textSize="16sp"
         app:cornerRadius="0dp"

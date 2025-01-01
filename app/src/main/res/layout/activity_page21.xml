@@ -192,7 +192,6 @@
         android:id="@+id/page21_backBtnP2"
         android:layout_width="95dp"
         android:layout_height="45dp"
-        android:backgroundTint="#576AD7"
         android:text="Back"
         android:textSize="16sp"
         app:cornerRadius="0dp"

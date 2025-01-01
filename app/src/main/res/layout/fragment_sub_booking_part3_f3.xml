@@ -57,7 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="@drawable/backgroundp3">
+            android:background="@drawable/main_background">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -78,7 +78,7 @@
                     android:id="@+id/buttonMySubscriptionP3F3"
                     android:layout_width="200dp"
                     android:text="My Subscription"
-                    android:backgroundTint="@color/green"
+                    android:backgroundTint="@color/purple"
                     android:layout_marginStart="5dp"
                     android:textColor="@color/white"
                     android:layout_height="wrap_content"

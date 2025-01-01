@@ -21,16 +21,16 @@
             android:id="@+id/page16_aboutUsBtnP2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#30D1E6"
+            android:backgroundTint="@color/purple"
             android:text="About us"
-            android:textColor="#000000"
+            android:textColor="@color/white"
             app:cornerRadius="0dp" />
 
         <Button
             android:id="@+id/page16_resourcesBtnP2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#AEEAF0"
+            android:backgroundTint="@color/light_grey"
             android:text="Resources"
             android:textColor="#000000"
             app:cornerRadius="0dp" />
@@ -39,7 +39,7 @@
             android:id="@+id/page16_donationBtnP2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#AEEAF0"
+            android:backgroundTint="@color/light_grey"
             android:text="Donation"
             android:textColor="#000000"
             app:cornerRadius="0dp" />
@@ -48,7 +48,7 @@
             android:id="@+id/page16_getHelpBtnP2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#AEEAF0"
+            android:backgroundTint="@color/light_grey"
             android:text="Help"
             android:textColor="#000000"
             app:cornerRadius="0dp" />

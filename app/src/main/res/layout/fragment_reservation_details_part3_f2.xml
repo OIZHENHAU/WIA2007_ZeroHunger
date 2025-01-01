@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:text="Experience"
                 android:layout_marginStart="3dp"
-                android:backgroundTint="@color/green"
+                android:backgroundTint="@color/purple"
                 app:cornerRadius="0dp"/>
 
             <Button
@@ -54,7 +54,7 @@
             android:gravity="center"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:textColor="@color/green"
+            android:textColor="@color/purple"
             android:text="Strawberry Picking"/>
 
         <TextView
@@ -77,7 +77,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:textStyle="bold"
-                android:textColor="@color/green"
+                android:textColor="@color/purple"
                 android:textSize="18dp"
                 android:text="Location: "/>
 
@@ -101,7 +101,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:textColor="@color/green"
+                android:textColor="@color/purple"
                 android:textSize="18dp"
                 android:text="Rating: "/>
 
@@ -130,7 +130,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/green"
+                android:textColor="@color/purple"
                 android:textStyle="bold"
                 android:textSize="18dp"
                 android:text="Price: "/>
@@ -174,7 +174,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:textColor="@color/green"
+                    android:textColor="@color/purple"
                     android:textSize="18dp"
                     android:text="Time Slot: "/>
 
@@ -195,7 +195,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:textColor="@color/green"
+                    android:textColor="@color/purple"
                     android:layout_marginStart="30dp"
                     android:textSize="18dp"
                     android:text="Number of Participants: "/>
@@ -221,7 +221,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:textColor="@color/green"
+                android:textColor="@color/purple"
                 android:textSize="18dp"
                 android:text="Select Date: "/>
 
@@ -246,7 +246,7 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:textSize="18sp"
-                android:textColor="@color/green"
+                android:textColor="@color/purple"
                 android:text="Total Price: "/>
 
             <TextView
@@ -281,7 +281,7 @@
                 android:id="@+id/backButtonDetailsP3F2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/green"
+                android:backgroundTint="@color/purple"
                 android:text="Back"
                 android:layout_marginEnd="10dp"
                 app:cornerRadius="0dp"/>
@@ -290,7 +290,7 @@
                 android:id="@+id/submitButtonDetailsP3F2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/green"
+                android:backgroundTint="@color/purple"
                 android:layout_marginStart="10dp"
                 android:text="Submit"
                 app:cornerRadius="0dp"/>

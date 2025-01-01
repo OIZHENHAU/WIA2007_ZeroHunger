@@ -4,13 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundp3"
+    android:background="@drawable/main_background"
     tools:context=".Part3.SubscriptionFilterFragmentPart3">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/green">
+        android:background="@color/purple">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -126,7 +126,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginStart="100dp"
-            android:backgroundTint="@color/green"
+            android:backgroundTint="@color/purple"
             android:text="Search"/>
 
     </LinearLayout>
