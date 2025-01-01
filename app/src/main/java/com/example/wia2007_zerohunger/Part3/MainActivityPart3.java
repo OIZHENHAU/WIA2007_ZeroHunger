@@ -45,6 +45,28 @@ public class MainActivityPart3 extends AppCompatActivity {
         fragmentTransaction.replace(R.id.viewPageMainPart3, connectionFragmentPart3);
         fragmentTransaction.commit();
 
+        if (getIntent() != null) {
+            int checkFarmerCode = getIntent().getIntExtra("checkFarmerCode", 1);
+
+            if (checkFarmerCode == 1) {
+                FragmentManager fragmentManager1 = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction1 = fragmentManager.beginTransaction();
+
+                ReservationBookingFragmentPart3 reservationBookingFragmentPart3 = new ReservationBookingFragmentPart3();
+                fragmentTransaction1.replace(R.id.viewPageMainPart3, reservationBookingFragmentPart3);
+                fragmentTransaction1.commit();
+
+            } else {
+                FragmentManager fragmentManager2 = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction2 = fragmentManager.beginTransaction();
+
+                SubBookingFragmentPart3F3 subBookingFragmentPart3F3 = new SubBookingFragmentPart3F3();
+                fragmentTransaction2.replace(R.id.viewPageMainPart3, subBookingFragmentPart3F3);
+                fragmentTransaction2.commit();
+
+            }
+        }
+
         connectionButtonPart3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
