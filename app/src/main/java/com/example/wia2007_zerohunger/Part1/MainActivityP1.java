@@ -54,7 +54,6 @@ public class MainActivityP1 extends AppCompatActivity {
         });
 
 
-
         mainBinding.mainP1Toolbar.setNavigationOnClickListener(v -> {
             Intent intentMainMenu = new Intent(MainActivityP1.this, MainMenu.class);
             startActivity(intentMainMenu);

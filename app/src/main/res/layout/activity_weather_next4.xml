@@ -45,7 +45,6 @@
         app:layout_constraintTop_toTopOf="@+id/appBarLayout" />
 
     <ImageView
-        android:id="@+id/imageView8"
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_marginStart="304dp"

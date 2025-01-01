@@ -173,6 +173,12 @@ public class MainMenu extends AppCompatActivity {
             startActivity(intent);
             finish();
             return true;
+
+        } else if (item.getItemId() == R.id.top_menu_profile) {
+            Intent intent = new Intent(MainMenu.this, ProfileActivity.class);
+            startActivity(intent);
+            return true;
+
         } else {
             return super.onOptionsItemSelected(item);
         }
