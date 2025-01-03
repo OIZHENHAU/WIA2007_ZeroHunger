@@ -22,6 +22,10 @@ import com.example.wia2007_zerohunger.Part3.SubBookingDatabase.SubBookingViewMod
 import com.example.wia2007_zerohunger.Part3.SubscriptionDatabase.Subscription;
 import com.example.wia2007_zerohunger.Part3.SubscriptionDatabase.SubscriptionViewModel;
 import com.example.wia2007_zerohunger.R;
+import com.example.wia2007_zerohunger.UserDatabase.UserAccount;
+import com.example.wia2007_zerohunger.UserDatabase.UserAccountViewModel;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.List;
 
@@ -36,19 +40,26 @@ public class SubscriptionDetailsFragmentPart3 extends Fragment {
     Button backButtonSubscriptionDetailsP3F3, subscribeButtonSubscriptionDetailsP3F3;
     Button prevButton;
     TextView totalAmountSubscriptionDetailsP3F3;
-
     private int subscriptionPlanCode;
-
     private int imageID;
 
     SubscriptionViewModel subscriptionViewModel;
     SubBookingViewModel subBookingViewModel;
+    UserAccountViewModel userAccountViewModel;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_subscription_details_part3, container, false);
+
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        FirebaseUser user = auth.getCurrentUser();
+
+        String currentEmail = user.getEmail();
+
+        userAccountViewModel = new ViewModelProvider.AndroidViewModelFactory(getActivity().getApplication())
+                .create(UserAccountViewModel.class);
 
         buttonSubscriptionDetailsP3F3 = view.findViewById(R.id.buttonSubscriptionDetailsP3F3);
         buttonMySubscriptionDetailsP3F3 = view.findViewById(R.id.buttonMySubscriptionDetailsP3F3);
@@ -158,17 +169,41 @@ public class SubscriptionDetailsFragmentPart3 extends Fragment {
                 int subBookingImageId = imageID;
                 double subBookingPrice = Double.parseDouble(totalAmountSubscriptionDetailsP3F3.getText().toString());
 
-                SubBooking newSubBooking = new SubBooking(subBookingName, subBookingImageId, subscriptionPlanCode, subBookingPrice);
-                subBookingViewModel.insert(newSubBooking);
+                userAccountViewModel.getUserAccountByEmail(currentEmail).observe(getViewLifecycleOwner(), new Observer<UserAccount>() {
+                    @Override
+                    public void onChanged(UserAccount userAccount) {
+                        double currentAmount = userAccount.getAmount();
 
-                Toast.makeText(getContext(), "Subscription Successful", Toast.LENGTH_SHORT).show();
+                        if (currentAmount >= subBookingPrice) {
+                            double newAmount = currentAmount - subBookingPrice;
 
-                FragmentManager fragmentManager = getParentFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                            if (newAmount < 0) {
+                                userAccount.setAmount(0);
+                                userAccountViewModel.update(userAccount);
 
-                SubscriptionFragmentPart3 subscriptionFragmentPart3 = new SubscriptionFragmentPart3();
-                fragmentTransaction.replace(R.id.viewPageMainPart3, subscriptionFragmentPart3);
-                fragmentTransaction.commit();
+                            } else {
+                                userAccount.setAmount(newAmount);
+                                userAccountViewModel.update(userAccount);
+                            }
+
+                            SubBooking newSubBooking = new SubBooking(subBookingName, subBookingImageId, subscriptionPlanCode, subBookingPrice);
+                            subBookingViewModel.insert(newSubBooking);
+
+                            Toast.makeText(getContext(), "Subscription Successful", Toast.LENGTH_SHORT).show();
+
+                            FragmentManager fragmentManager = getParentFragmentManager();
+                            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                            SubscriptionFragmentPart3 subscriptionFragmentPart3 = new SubscriptionFragmentPart3();
+                            fragmentTransaction.replace(R.id.viewPageMainPart3, subscriptionFragmentPart3);
+                            fragmentTransaction.commit();
+
+                        } else {
+                            Toast.makeText(getContext(), "Insufficient Balance", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
 
             }
         });

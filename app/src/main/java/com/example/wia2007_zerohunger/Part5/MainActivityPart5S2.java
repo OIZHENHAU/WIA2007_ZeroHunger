@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResult;
@@ -12,6 +13,7 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -26,6 +28,7 @@ import com.example.wia2007_zerohunger.Part5.FinancialDatabase.NoteAdapter;
 import com.example.wia2007_zerohunger.Part5.FinancialDatabase.NoteViewModel;
 import com.example.wia2007_zerohunger.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivityPart5S2 extends AppCompatActivity {
@@ -34,6 +37,8 @@ public class MainActivityPart5S2 extends AppCompatActivity {
     RecyclerView locationListViewP5S2;
     private NoteViewModel noteViewModel;
     ActivityResultLauncher<Intent> activityResultLauncherForUpdateNote;
+
+    private SearchView editTextDonationP5S2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +57,21 @@ public class MainActivityPart5S2 extends AppCompatActivity {
         int isUpdated = intent.getIntExtra("isUpdated", 0);
 
         backButtonMainP5S2 = findViewById(R.id.backButtonMainP5S2);
+        editTextDonationP5S2 = findViewById(R.id.editTextDonationP5S2);
+        editTextDonationP5S2.clearFocus();
+
+        editTextDonationP5S2.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filterList(newText);
+                return true;
+            }
+        });
 
         backButtonMainP5S2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -141,5 +161,56 @@ public class MainActivityPart5S2 extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    public void filterList(String newText) {
+        List<Note> filteredList = new ArrayList<>();
+        String lowerNewText = newText.toLowerCase();
+
+        noteViewModel.getAllNotes().observe(MainActivityPart5S2.this, new Observer<List<Note>>() {
+            @Override
+            public void onChanged(List<Note> notes) {
+
+                for(Note note : notes) {
+                    String noteName = note.getAidName().toLowerCase();
+
+                    if(noteName.equals(lowerNewText)) {
+                        filteredList.add(note);
+                    }
+                }
+
+                NoteAdapter noteAdapter = new NoteAdapter();
+
+                if (filteredList.isEmpty()) {
+                    noteAdapter.setNotes(notes);
+                    locationListViewP5S2.setAdapter(noteAdapter);
+
+                } else {
+                    Toast.makeText(getApplicationContext(), "Data Found", Toast.LENGTH_SHORT).show();
+                    noteAdapter.setNotes(filteredList);
+                    locationListViewP5S2.setAdapter(noteAdapter);
+                }
+
+                noteAdapter.setOnItemClickListener(new NoteAdapter.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(Note note) {
+                        Intent intent = new Intent(MainActivityPart5S2.this, MainActivityPart5S3.class);
+                        intent.putExtra("aidName", note.getAidName());
+                        intent.putExtra("donationAmount", note.getAidAmount());
+                        intent.putExtra("availableSlot", note.getAidSlots());
+                        intent.putExtra("aidDateLine", note.getAidDateLine());
+                        intent.putExtra("financialID", note.getAidId());
+                        intent.putExtra("imageID", note.getImageID());
+
+
+                        //activity launcher
+                        activityResultLauncherForUpdateNote.launch(intent);
+
+                    }
+                });
+
+            }
+        });
+
     }
 }

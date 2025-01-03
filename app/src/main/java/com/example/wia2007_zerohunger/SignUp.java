@@ -70,7 +70,7 @@ public class SignUp extends AppCompatActivity {
                 if (isValidPassword(userPassword)) {
                     userAccountViewModel = new ViewModelProvider(SignUp.this).get(UserAccountViewModel.class);
 
-                    UserAccount newUserAccount = new UserAccount(userName, userEmail, userPassword, 100);
+                    UserAccount newUserAccount = new UserAccount(userName, userEmail, userPassword, 500);
                     currentUserAccount = newUserAccount;
                     userAccountViewModel.insert(newUserAccount);
 

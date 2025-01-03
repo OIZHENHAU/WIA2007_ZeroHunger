@@ -12,12 +12,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.wia2007_zerohunger.R;
+import com.example.wia2007_zerohunger.UserDatabase.UserAccount;
+import com.example.wia2007_zerohunger.UserDatabase.UserAccountViewModel;
+import com.google.firebase.Firebase;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivityPart5S4 extends AppCompatActivity {
 
     Button noButtonP5S4, yesButtonP5S4;
+
+    UserAccountViewModel userAccountViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +38,13 @@ public class MainActivityPart5S4 extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        FirebaseUser user = auth.getCurrentUser();
+
+        String currentEmail = user.getEmail();
+
+        userAccountViewModel = new ViewModelProvider(MainActivityPart5S4.this).get(UserAccountViewModel.class);
 
         Intent intent = getIntent();
         int minUserAmount = intent.getIntExtra("minUserAmount", 0);
@@ -68,6 +84,7 @@ public class MainActivityPart5S4 extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(MainActivityPart5S4.this, "Donation has made.", Toast.LENGTH_SHORT).show();
                 updateNote(minUserAmount, minUserSlots, donationAmount, availableSlot, financialID, aidName, aidDateLine, imageID);
+
             }
         });
     }

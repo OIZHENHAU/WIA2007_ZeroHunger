@@ -155,6 +155,21 @@ public class SubscriptionFragmentPart3 extends Fragment {
                     subscriptionAdapter.setSubscriptions(filterList);
                     recyclerViewP3F3.setAdapter(subscriptionAdapter);
                 }
+
+                subscriptionAdapter.setOnItemClickListener(new SubscriptionAdapter.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(Subscription subscription) {
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("subscriptionId", subscription.getSubscriptionId());
+
+                        SubscriptionDetailsFragmentPart3 subscriptionDetailsFragment = new SubscriptionDetailsFragmentPart3();
+                        subscriptionDetailsFragment.setArguments(bundle);
+
+                        getActivity().getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.viewPageMainPart3, subscriptionDetailsFragment)
+                                .addToBackStack(null).commit();
+                    }
+                });
             }
         });
     }
@@ -188,6 +203,21 @@ public class SubscriptionFragmentPart3 extends Fragment {
                     subscriptionAdapter.setSubscriptions(filterList);
                     recyclerViewP3F3.setAdapter(subscriptionAdapter);
                 }
+
+                subscriptionAdapter.setOnItemClickListener(new SubscriptionAdapter.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(Subscription subscription) {
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("subscriptionId", subscription.getSubscriptionId());
+
+                        SubscriptionDetailsFragmentPart3 subscriptionDetailsFragment = new SubscriptionDetailsFragmentPart3();
+                        subscriptionDetailsFragment.setArguments(bundle);
+
+                        getActivity().getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.viewPageMainPart3, subscriptionDetailsFragment)
+                                .addToBackStack(null).commit();
+                    }
+                });
             }
         });
     }

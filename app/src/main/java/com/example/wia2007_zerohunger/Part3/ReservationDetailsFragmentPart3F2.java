@@ -25,6 +25,10 @@ import com.example.wia2007_zerohunger.Part3.ResBookingDatabase.ResBookingViewMod
 import com.example.wia2007_zerohunger.Part3.ReservationDatabase.Reservation;
 import com.example.wia2007_zerohunger.Part3.ReservationDatabase.ReservationViewModel;
 import com.example.wia2007_zerohunger.R;
+import com.example.wia2007_zerohunger.UserDatabase.UserAccount;
+import com.example.wia2007_zerohunger.UserDatabase.UserAccountViewModel;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.List;
 
@@ -40,11 +44,22 @@ public class ReservationDetailsFragmentPart3F2 extends Fragment {
     Button buttonBookingDetailsP3F2;
     Button backButtonDetailsP3F2, submitButtonDetailsP3F2;
 
+    UserAccountViewModel userAccountViewModel;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_reservation_details_part3_f2, container, false);
+
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        FirebaseUser user = auth.getCurrentUser();
+
+        String currentEmail = user.getEmail();
+
+        userAccountViewModel = new ViewModelProvider.AndroidViewModelFactory(getActivity().getApplication())
+                .create(UserAccountViewModel.class);
+
 
         //Image & Text View
         imageViewDetailsP3F2 = view.findViewById(R.id.imageViewDetailsP3F2);
@@ -171,17 +186,43 @@ public class ReservationDetailsFragmentPart3F2 extends Fragment {
                     String timeSlots = bookingTimeSlotsP3F2.getText().toString();
                     int numParticipants = Integer.parseInt(bookingNumParticipantsP3F2.getText().toString());
 
-                    ResBooking resBooking = new ResBooking(name, imageId, location, date, timeSlots, numParticipants);
-                    resBookingViewModel.insert(resBooking);
+                    double totalPrice = Double.parseDouble(totalAmountDetailsP3F2.getText().toString());
 
-                    Toast.makeText(getContext(), "Booking Successful", Toast.LENGTH_SHORT).show();
+                    userAccountViewModel.getUserAccountByEmail(currentEmail).observe(getViewLifecycleOwner(), new Observer<UserAccount>() {
+                        @Override
+                        public void onChanged(UserAccount userAccount) {
+                            double userAmount = userAccount.getAmount();
 
-                    FragmentManager fragmentManager = getParentFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                            if (userAmount >= totalPrice) {
+                                double newAmount = userAmount - totalPrice;
 
-                    ReservationFragmentPart3 reservationFragmentPart3 = new ReservationFragmentPart3();
-                    fragmentTransaction.replace(R.id.viewPageMainPart3, reservationFragmentPart3);
-                    fragmentTransaction.commit();
+                                if (newAmount < 0) {
+                                    userAccount.setAmount(0);
+                                    userAccountViewModel.update(userAccount);
+
+                                } else {
+                                    userAccount.setAmount(newAmount);
+                                    userAccountViewModel.update(userAccount);
+                                }
+
+                                ResBooking resBooking = new ResBooking(name, imageId, location, date, timeSlots, numParticipants);
+                                resBookingViewModel.insert(resBooking);
+
+                                Toast.makeText(getContext(), "Booking Successful", Toast.LENGTH_SHORT).show();
+
+                                FragmentManager fragmentManager = getParentFragmentManager();
+                                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                                ReservationFragmentPart3 reservationFragmentPart3 = new ReservationFragmentPart3();
+                                fragmentTransaction.replace(R.id.viewPageMainPart3, reservationFragmentPart3);
+                                fragmentTransaction.commit();
+
+                            } else {
+                                Toast.makeText(getContext(), "Insufficient Balance", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+
 
                 }
             }

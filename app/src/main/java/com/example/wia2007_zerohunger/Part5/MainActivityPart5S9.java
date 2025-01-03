@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -21,6 +22,7 @@ import com.example.wia2007_zerohunger.Part5.reader.FinancialFilter;
 import com.example.wia2007_zerohunger.Part5.reader.TextFileFinancialReader;
 import com.example.wia2007_zerohunger.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivityPart5S9 extends AppCompatActivity {
@@ -28,6 +30,7 @@ public class MainActivityPart5S9 extends AppCompatActivity {
     Button backButtonP5S9;
     List<FinancialData> financialDataList;
 
+    SearchView editTextDonateLocationP5S9;
     List<FinancialData> financialResultList;
     private RecyclerView recyclerView;
     private FinancialAdapter financialAdapter;
@@ -102,6 +105,21 @@ public class MainActivityPart5S9 extends AppCompatActivity {
 
             }
         });
+
+        editTextDonateLocationP5S9 = findViewById(R.id.editTextDonateLocationP5S9);
+        editTextDonateLocationP5S9.clearFocus();
+
+        editTextDonateLocationP5S9.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return true;
+            }
+        });
     }
 
     public void generateFinancialDataList() {
@@ -109,4 +127,5 @@ public class MainActivityPart5S9 extends AppCompatActivity {
         financialDataList = textFileFinancialReader.readTextFile(this, R.raw.financial_aid);
 
     }
+
 }

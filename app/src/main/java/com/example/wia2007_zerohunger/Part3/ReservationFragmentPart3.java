@@ -157,6 +157,22 @@ public class ReservationFragmentPart3 extends Fragment {
                     reservationAdapter.setReservations(filteredList);
                     recyclerViewP3F2.setAdapter(reservationAdapter);
                 }
+
+                reservationAdapter.setOnItemClickListener(new ReservationAdapter.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(Reservation reservation) {
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("reservationId", reservation.getReservationId());
+
+                        ReservationDetailsFragmentPart3F2 reservationDetailsFragment = new ReservationDetailsFragmentPart3F2();
+                        reservationDetailsFragment.setArguments(bundle);
+
+                        getActivity().getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.viewPageMainPart3, reservationDetailsFragment)
+                                .addToBackStack(null)
+                                .commit();
+                    }
+                });
             }
         });
     }
@@ -193,6 +209,22 @@ public class ReservationFragmentPart3 extends Fragment {
                     reservationAdapter.setReservations(filterList);
                     recyclerViewP3F2.setAdapter(reservationAdapter);
                 }
+
+                reservationAdapter.setOnItemClickListener(new ReservationAdapter.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(Reservation reservation) {
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("reservationId", reservation.getReservationId());
+
+                        ReservationDetailsFragmentPart3F2 reservationDetailsFragment = new ReservationDetailsFragmentPart3F2();
+                        reservationDetailsFragment.setArguments(bundle);
+
+                        getActivity().getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.viewPageMainPart3, reservationDetailsFragment)
+                                .addToBackStack(null)
+                                .commit();
+                    }
+                });
             }
         });
     }
