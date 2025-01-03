@@ -76,7 +76,8 @@ public class MainActivityPart5S2 extends AppCompatActivity {
         backButtonMainP5S2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(MainActivityPart5S2.this, MainActivityPart5S1.class);
+                startActivity(intent);
             }
         });
 

@@ -28,6 +28,8 @@ public class MainActivityPart5S4 extends AppCompatActivity {
 
     UserAccountViewModel userAccountViewModel;
 
+    private String currentEmail;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +44,7 @@ public class MainActivityPart5S4 extends AppCompatActivity {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseUser user = auth.getCurrentUser();
 
-        String currentEmail = user.getEmail();
+        currentEmail = user.getEmail();
 
         userAccountViewModel = new ViewModelProvider(MainActivityPart5S4.this).get(UserAccountViewModel.class);
 
@@ -107,23 +109,52 @@ public class MainActivityPart5S4 extends AppCompatActivity {
         donationAmount -= minUserAmount * minUserSlots;
         availableSlot -= minUserSlots;
 
-        Log.d("donationAmountFinal", String.valueOf(donationAmount));
-        Log.d("availableSlotFinal", String.valueOf(availableSlot));
+        int donationAmountFinal = donationAmount;
+        int availableSlotFinal = availableSlot;
 
-        Intent intent = new Intent(MainActivityPart5S4.this, MainActivityPart5S2.class);
-        intent.putExtra("aidName", aidName);
-        intent.putExtra("donationAmount", donationAmount);
-        intent.putExtra("availableSlot", availableSlot);
-        intent.putExtra("financialID", financialID);
-        intent.putExtra("aidDateLine", aidDateLine);
-        intent.putExtra("imageID", imageID);
+        userAccountViewModel.getUserAccountByEmail(currentEmail).observe(MainActivityPart5S4.this, new Observer<UserAccount>() {
+            @Override
+            public void onChanged(UserAccount userAccount) {
+                double userAmount = userAccount.getAmount();
 
-        if (financialID != -1) {
-            intent.putExtra("noteId", financialID);
-            intent.putExtra("isUpdated", 1);
-            setResult(RESULT_OK, intent);
-            startActivity(intent);
-        }
+                if (userAmount >= minUserAmount) {
+
+                    double newAmount = userAmount - minUserAmount;
+
+                    if (newAmount < 0) {
+                        userAccount.setAmount(0);
+                        userAccountViewModel.update(userAccount);
+                    } else {
+                        userAccount.setAmount(newAmount);
+                        userAccountViewModel.update(userAccount);
+                    }
+
+
+                    Log.d("donationAmountFinal", String.valueOf(donationAmountFinal));
+                    Log.d("availableSlotFinal", String.valueOf(availableSlotFinal));
+
+                    Intent intent = new Intent(MainActivityPart5S4.this, MainActivityPart5S2.class);
+                    intent.putExtra("aidName", aidName);
+                    intent.putExtra("donationAmount", donationAmountFinal);
+                    intent.putExtra("availableSlot", availableSlotFinal);
+                    intent.putExtra("financialID", financialID);
+                    intent.putExtra("aidDateLine", aidDateLine);
+                    intent.putExtra("imageID", imageID);
+
+                    if (financialID != -1) {
+                        intent.putExtra("noteId", financialID);
+                        intent.putExtra("isUpdated", 1);
+                        setResult(RESULT_OK, intent);
+                        startActivity(intent);
+                    }
+
+                } else {
+                    Toast.makeText(MainActivityPart5S4.this, "Not enough money for donation.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
 
     }
 }
