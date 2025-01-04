@@ -1,5 +1,6 @@
 package com.example.wia2007_zerohunger;
 
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,6 +45,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Base64;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -54,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
     private UserAccountViewModel userAccountViewModel;
     private UserAccount currentUserAccount;
     ActivityResultLauncher<Intent> activityResultLauncher;
+    private static final String SALT_CODE = "Salt";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -228,6 +234,17 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
 
+        }
+    }
+
+    public static String hashPassword(String password, String salt) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+        md.update(salt.getBytes()); // Add salt
+        byte[] hashedPassword = md.digest(password.getBytes()); // Hash password with salt
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            return Base64.getEncoder().encodeToString(hashedPassword);
+        }else{
+            return null;
         }
     }
 }

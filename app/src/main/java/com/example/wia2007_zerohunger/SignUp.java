@@ -34,6 +34,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 import java.io.File;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
 import java.util.Base64;
 
@@ -74,6 +76,7 @@ public class SignUp extends AppCompatActivity {
     //double amount;
     private UserAccountViewModel userAccountViewModel;
     private UserAccount currentUserAccount;
+    private static final String SALT_CODE = "Salt";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,6 +102,7 @@ public class SignUp extends AppCompatActivity {
                 String userPassword = password.getText().toString();
 
                 if (isValidPassword(userPassword)) {
+
                     userAccountViewModel = new ViewModelProvider(SignUp.this).get(UserAccountViewModel.class);
 
                     UserAccount newUserAccount = new UserAccount(userName, userEmail, userPassword, 2000);
@@ -165,6 +169,8 @@ public class SignUp extends AppCompatActivity {
                 .post(body)
                 .build();
 
+        Handler mainHandler = new Handler(Looper.getMainLooper());
+
         // Make the asynchronous call
         client.newCall(request).enqueue(new Callback() {
             @Override
@@ -175,7 +181,13 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 if (response.isSuccessful()) {
-                    Toast.makeText(getApplicationContext(), "Email sent successfully! Please check your Email", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(), "Email sent successfully! Please check your Email", Toast.LENGTH_SHORT).show();
+                    mainHandler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getApplicationContext(), "Email sent successfully! Please check your Email", Toast.LENGTH_SHORT).show();
+                        }
+                    });
                     System.out.println("Email sent successfully!");
 
                 } else {
@@ -185,6 +197,17 @@ public class SignUp extends AppCompatActivity {
             }
         });
 
+    }
+
+    public static String hashPassword(String password, String salt) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+        md.update(salt.getBytes()); // Add salt
+        byte[] hashedPassword = md.digest(password.getBytes()); // Hash password with salt
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            return Base64.getEncoder().encodeToString(hashedPassword);
+        }else{
+            return null;
+        }
     }
 
 
