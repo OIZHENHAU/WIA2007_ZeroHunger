@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/main_background">
+    android:background="@drawable/background_image">
 
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -33,9 +33,10 @@
 
     <EditText
         android:id="@+id/editTextEmail"
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginTop="360dp"
         android:ems="10"
         android:gravity="center"
@@ -45,9 +46,10 @@
 
     <EditText
         android:id="@+id/editTextPassword"
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginTop="412dp"
         android:ems="10"
         android:gravity="center"
@@ -70,6 +72,7 @@
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginStart="208dp"
+        android:layout_marginEnd="4dp"
         android:layout_marginTop="484dp"
         android:text="Sign Up"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,7 +82,7 @@
         android:id="@+id/buttonForgot"
         android:layout_width="400dp"
         android:layout_height="50dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="540dp"
         android:text="I Forgot My Password"
         app:layout_constraintStart_toStartOf="parent"
@@ -102,7 +105,7 @@
         android:layout_marginStart="72dp"
         android:layout_marginTop="684dp"
         android:text="Comprehensive Solutions to Eradicate Hunger"
-        android:textColor="#F5FFFFFF"
+        android:textColor="@color/purple"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

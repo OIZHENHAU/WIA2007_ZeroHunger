@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_image"
+    tools:context=".Part5.P5_Insurance5FMT">
+
+    <TextView
+        android:id="@+id/FMTTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Financial Management Tool"
+        android:textAlignment="center"
+        android:textColor="#014565"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.057" />
+
+    <TextView
+        android:id="@+id/FMTInsuranceDashboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insurance Dashboard"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.125"
+        tools:contentDescription="Tax Calculator" />
+
+    <View
+        android:id="@+id/TaxDashboardSubtitle"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:background="@drawable/border4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.122" />
+
+    <View
+        android:id="@+id/Insurance1FMTView"
+        android:layout_width="311dp"
+        android:layout_height="477dp"
+        android:background="@drawable/border8dp"
+        android:fadingEdgeLength="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/insurancePayable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Insurance Payable"
+        android:textAlignment="viewStart"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/Insurance1FMTView"
+        app:layout_constraintHorizontal_bias="0.595"
+        app:layout_constraintStart_toStartOf="@+id/Insurance1FMTView"
+        app:layout_constraintTop_toTopOf="@+id/Insurance1FMTView" />
+
+    <TextView
+        android:id="@+id/insurancePayableLabel"
+        android:layout_width="240dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/RM0"
+        android:textAlignment="textStart"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="@+id/Insurance1FMTView"
+        app:layout_constraintHorizontal_bias="0.394"
+        app:layout_constraintStart_toStartOf="@+id/Insurance1FMTView"
+        app:layout_constraintTop_toBottomOf="@+id/insurancePayable"
+        tools:contentDescription="Chargeable Income" />
+
+    <TextView
+        android:id="@+id/insuranceSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Summary"
+        android:textAlignment="viewStart"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="@+id/Insurance1FMTView"
+        app:layout_constraintHorizontal_bias="0.133"
+        app:layout_constraintStart_toStartOf="@+id/Insurance1FMTView"
+        app:layout_constraintTop_toBottomOf="@+id/insurancePayableLabel" />
+
+    <TextView
+        android:id="@+id/deductiblesCosts"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="24dp"
+        android:text="Deductibles"
+        android:textAlignment="center"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="@+id/Insurance1FMTView"
+        app:layout_constraintHorizontal_bias="0.465"
+        app:layout_constraintStart_toStartOf="@+id/Insurance1FMTView"
+        app:layout_constraintTop_toBottomOf="@+id/insuranceSummary" />
+
+    <TextView
+        android:id="@+id/insuranceCosts"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="24dp"
+        android:text="Insurance Cost"
+        android:textAlignment="center"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="@+id/Insurance1FMTView"
+        app:layout_constraintHorizontal_bias="0.911"
+        app:layout_constraintStart_toStartOf="@+id/Insurance1FMTView"
+        app:layout_constraintTop_toBottomOf="@+id/insuranceSummary" />
+
+    <TextView
+        android:id="@+id/LifeInsurance"
+        android:layout_width="72dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="48dp"
+        android:text="Life"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/Insurance1FMTView"
+        app:layout_constraintTop_toBottomOf="@+id/insuranceSummary" />
+
+    <TextView
+        android:id="@+id/lifeInsuranceDeductibleLabel"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:inputType="number"
+        android:text="@string/RM0"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/Insurance1FMTView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/LifeInsurance"
+        app:layout_constraintTop_toTopOf="@+id/LifeInsurance"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/lifeInsuranceCostLabel"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:inputType="number"
+        android:text="@string/RM0"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/Insurance1FMTView"
+        app:layout_constraintHorizontal_bias="0.834"
+        app:layout_constraintStart_toEndOf="@+id/LifeInsurance"
+        app:layout_constraintTop_toTopOf="@+id/lifeInsuranceDeductibleLabel"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/MotorInsurance"
+        android:layout_width="72dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="28dp"
+        android:text="Motor"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/Insurance1FMTView"
+        app:layout_constraintTop_toBottomOf="@+id/LifeInsurance" />
+
+    <TextView
+        android:id="@+id/motorInsuranceDeductibleLabel"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:inputType="number"
+        android:text="@string/RM0"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/Insurance1FMTView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/LifeInsurance"
+        app:layout_constraintTop_toTopOf="@+id/MotorInsurance"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/motorInsuranceCostLabel"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:inputType="number"
+        android:text="@string/RM0"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/Insurance1FMTView"
+        app:layout_constraintHorizontal_bias="0.834"
+        app:layout_constraintStart_toEndOf="@+id/LifeInsurance"
+        app:layout_constraintTop_toTopOf="@+id/motorInsuranceDeductibleLabel"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/PersonalInsurance"
+        android:layout_width="72dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="28dp"
+        android:text="Personal"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/Insurance1FMTView"
+        app:layout_constraintTop_toBottomOf="@+id/MotorInsurance" />
+
+    <TextView
+        android:id="@+id/personalInsuranceDeductibleLabel"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:inputType="number"
+        android:text="@string/RM0"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/Insurance1FMTView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/LifeInsurance"
+        app:layout_constraintTop_toTopOf="@+id/PersonalInsurance"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/personalInsuranceCostLabel"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:inputType="number"
+        android:text="@string/RM0"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/Insurance1FMTView"
+        app:layout_constraintHorizontal_bias="0.834"
+        app:layout_constraintStart_toEndOf="@+id/LifeInsurance"
+        app:layout_constraintTop_toTopOf="@+id/personalInsuranceDeductibleLabel"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/medicalInsurance"
+        android:layout_width="72dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="28dp"
+        android:text="Medical"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/Insurance1FMTView"
+        app:layout_constraintTop_toBottomOf="@+id/PersonalInsurance" />
+
+    <TextView
+        android:id="@+id/medicalInsuranceDeductibleLabel"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:inputType="number"
+        android:text="@string/RM0"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/Insurance1FMTView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/LifeInsurance"
+        app:layout_constraintTop_toTopOf="@+id/medicalInsurance"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/medicalInsuranceCostLabel"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:inputType="number"
+        android:text="@string/RM0"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/Insurance1FMTView"
+        app:layout_constraintHorizontal_bias="0.834"
+        app:layout_constraintStart_toEndOf="@+id/LifeInsurance"
+        app:layout_constraintTop_toTopOf="@+id/medicalInsuranceDeductibleLabel"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/travelInsurance"
+        android:layout_width="72dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="28dp"
+        android:text="Travel"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/Insurance1FMTView"
+        app:layout_constraintTop_toBottomOf="@+id/medicalInsurance" />
+
+    <TextView
+        android:id="@+id/travelInsuranceDeductibleLabel"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:inputType="number"
+        android:text="@string/RM0"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/Insurance1FMTView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/LifeInsurance"
+        app:layout_constraintTop_toTopOf="@+id/travelInsurance"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/travelInsuranceCostLabel"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:inputType="number"
+        android:text="@string/RM0"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/Insurance1FMTView"
+        app:layout_constraintHorizontal_bias="0.834"
+        app:layout_constraintStart_toEndOf="@+id/LifeInsurance"
+        app:layout_constraintTop_toTopOf="@+id/travelInsuranceDeductibleLabel"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/otherInsurance"
+        android:layout_width="72dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="28dp"
+        android:text="Other"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/Insurance1FMTView"
+        app:layout_constraintTop_toBottomOf="@+id/travelInsurance" />
+
+    <TextView
+        android:id="@+id/otherInsuranceDeductibleLabel"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:inputType="number"
+        android:text="@string/RM0"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/Insurance1FMTView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/LifeInsurance"
+        app:layout_constraintTop_toTopOf="@+id/otherInsurance"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/otherInsuranceCostLabel"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:inputType="number"
+        android:text="@string/RM0"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/Insurance1FMTView"
+        app:layout_constraintHorizontal_bias="0.834"
+        app:layout_constraintStart_toEndOf="@+id/LifeInsurance"
+        app:layout_constraintTop_toTopOf="@+id/otherInsuranceDeductibleLabel"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/totalInsurance"
+        android:layout_width="72dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="28dp"
+        android:text="Total"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="@+id/Insurance1FMTView"
+        app:layout_constraintTop_toBottomOf="@+id/otherInsurance" />
+
+    <TextView
+        android:id="@+id/totalDeductiblesLabel"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:inputType="number"
+        android:text="@string/RM0"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/Insurance1FMTView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/LifeInsurance"
+        app:layout_constraintTop_toTopOf="@+id/totalInsurance"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/totalInsuranceCostLabel"
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+        android:inputType="number"
+        android:text="@string/RM0"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/Insurance1FMTView"
+        app:layout_constraintHorizontal_bias="0.834"
+        app:layout_constraintStart_toEndOf="@+id/LifeInsurance"
+        app:layout_constraintTop_toTopOf="@+id/totalDeductiblesLabel"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/homeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Insurance1FMTView" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/Back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Insurance1FMTView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

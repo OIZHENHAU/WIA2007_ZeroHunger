@@ -1,6 +1,9 @@
 package com.example.wia2007_zerohunger.Part5;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,5 +25,50 @@ public class MainActivityPart5S5 extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Button insuranceCalculator = findViewById(R.id.insuranceButton);
+        Button savingsGuide = findViewById(R.id.SavingsGuideButton);
+        Button backButton = findViewById(R.id.backButton);
+
+
+
+        insuranceCalculator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigationFromHomepageFMTToInsurance(v);
+            }
+        });
+
+        savingsGuide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigationFromHomepageFMTToSavingsGuide(v);
+            }
+        });
+
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigationFromHomepageFMTToHomepage(v);
+            }
+        });
+    }
+
+
+    public void navigationFromHomepageFMTToInsurance(View view) {
+        Intent intent = new Intent(MainActivityPart5S5.this, P5_Insurance1FMT.class);
+        startActivity(intent);
+    }
+
+    public void navigationFromHomepageFMTToSavingsGuide(View view) {
+        Intent intent = new Intent(MainActivityPart5S5.this, P5_SavingsGuide1FMT.class);
+        startActivity(intent);
+    }
+
+
+    public void navigationFromHomepageFMTToHomepage(View view) {
+        Intent intent = new Intent(MainActivityPart5S5.this, MainActivityPart5S1.class);
+        startActivity(intent);
     }
 }

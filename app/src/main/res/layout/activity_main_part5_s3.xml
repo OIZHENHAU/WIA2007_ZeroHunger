@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Part5.MainActivityPart5S3"
-    android:background="@drawable/main_background">
+    android:background="@drawable/background_image">
 
     <View
         android:id="@+id/view3"

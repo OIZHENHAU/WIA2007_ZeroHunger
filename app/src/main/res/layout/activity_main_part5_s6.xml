@@ -46,7 +46,7 @@
         android:layout_height="450dp"
         android:layout_marginStart="56dp"
         android:layout_marginTop="156dp"
-        android:background="@drawable/border8dpblue"
+        android:background="@drawable/border8dp_purple"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

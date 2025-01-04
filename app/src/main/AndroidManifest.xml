@@ -27,6 +27,36 @@
         android:theme="@style/Theme.WIA2007_ZeroHunger"
         tools:targetApi="31">
         <activity
+            android:name=".Part5.P5_SavingsGuide4FMT"
+            android:exported="false" />
+        <activity
+            android:name=".Part5.P5_SavingsGuide3FMT"
+            android:exported="false" />
+        <activity
+            android:name=".Part5.P5_SavingsGuide2FMT"
+            android:exported="false" />
+        <activity
+            android:name=".Part5.P5_SavingsGuide1FMT"
+            android:exported="false" />
+        <activity
+            android:name=".Part5.reader.P5_SavingGuide1FMT"
+            android:exported="false" />
+        <activity
+            android:name=".Part5.P5_Insurance5FMT"
+            android:exported="false" />
+        <activity
+            android:name=".Part5.P5_Insurance4FMT"
+            android:exported="false" />
+        <activity
+            android:name=".Part5.P5_Insurance3FMT"
+            android:exported="false" />
+        <activity
+            android:name=".Part5.P5_Insurance2FMT"
+            android:exported="false" />
+        <activity
+            android:name=".Part5.P5_Insurance1FMT"
+            android:exported="false" />
+        <activity
             android:name=".EditProfileActivity"
             android:exported="false" />
         <activity

@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Part5.MainActivityPart5S5">
+    tools:context=".Part5.MainActivityPart5S5"
+    android:background="@drawable/background_image">
 
     <!-- Financial Management Tools TextView -->
 
@@ -15,15 +16,6 @@
 
     <!-- Expenses Value TextView -->
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="300dp"
-        android:layout_height="450dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="120dp"
-        android:background="@drawable/border8dpblue"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -31,7 +23,7 @@
         android:layout_marginTop="56dp"
         android:text="Financial Management Tools"
         android:textAlignment="center"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="@color/purple"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,115 +34,125 @@
 
     <!-- Net Profit Value TextView -->
 
+    <ImageView
+        android:id="@+id/ZeroHungerHubLogo"
+        android:layout_width="300dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/FMTHomepageView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/FMTHomepageView"
+        app:layout_constraintTop_toTopOf="@+id/FMTHomepageView"
+        app:srcCompat="@drawable/zerohunger_hub_900px_x_300px"
+        android:contentDescription="@string/ZeroHungerHub_Logo"/>
+
+    <View
+        android:id="@+id/FMTHomepageView"
+        android:layout_width="300dp"
+        android:layout_height="450dp"
+        android:background="@drawable/border8dp_purple"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/insuranceButton"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:backgroundTint="@color/purple"
+        android:textSize="16sp"
+        app:cornerRadius="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/FMTHomepageView"
+        app:layout_constraintEnd_toEndOf="@+id/FMTHomepageView"
+        app:layout_constraintHorizontal_bias="0.897"
+        app:layout_constraintStart_toStartOf="@+id/FMTHomepageView"
+        app:layout_constraintTop_toBottomOf="@+id/ZeroHungerHubLogo"
+        app:layout_constraintVertical_bias="0.401"
+        tools:contentDescription="Insurance Button" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="248dp"
+        android:layout_marginTop="348dp"
+        android:src="@drawable/insurance"
+        app:civ_border_color="@color/black"
+        app:civ_border_width="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:id="@+id/financial_dashboardP5"
+        android:id="@+id/insuranceText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="192dp"
-        android:layout_marginTop="144dp"
-        android:text="Financial Dashboard"
+        android:text="@string/Insurance_Calculator"
         android:textAlignment="center"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- Expenses Label TextView -->
-
-    <!-- Income Label TextView -->
-
-    <!-- Net Profit Label TextView -->
-
-    <!-- Date Labels -->
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="188dp"
-        android:text="Expenses: "
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/expensesValueP5S5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="284dp"
-        android:layout_marginTop="188dp"
-        android:text="RM650"
-        android:textAlignment="center"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="260dp"
-        android:text="Net Profit: "
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/incomeValueP5S5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="284dp"
-        android:layout_marginTop="224dp"
-        android:text="RM350"
-        android:textAlignment="center"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/insuranceButton"
+        app:layout_constraintEnd_toEndOf="@+id/insuranceButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/insuranceButton"
+        app:layout_constraintTop_toTopOf="@+id/insuranceButton"
+        app:layout_constraintVertical_bias="0.9" />
 
     <Button
-        android:id="@+id/discoverMoreButtonP5S5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="196dp"
-        android:layout_marginTop="500dp"
-        android:text="Discover More"
+        android:id="@+id/SavingsGuideButton"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:backgroundTint="@color/purple"
+        android:textSize="16sp"
+        app:cornerRadius="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/FMTHomepageView"
+        app:layout_constraintEnd_toEndOf="@+id/FMTHomepageView"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="@+id/FMTHomepageView"
+        app:layout_constraintTop_toBottomOf="@+id/ZeroHungerHubLogo"
+        app:layout_constraintVertical_bias="0.401"
+        tools:contentDescription="Savings Guide Button" />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/savingsGuideImgae"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="348dp"
+        android:src="@drawable/saving_money"
+        app:civ_border_color="@color/black"
+        app:civ_border_width="2dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/savingsGuideText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="4dp"
+        android:text="@string/Savings_Guide"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/SavingsGuideButton"
+        app:layout_constraintEnd_toEndOf="@+id/SavingsGuideButton"
+        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintStart_toStartOf="@+id/SavingsGuideButton" />
 
     <Button
-        android:id="@+id/backButtonP5S5"
+        android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="596dp"
-        android:text="Back"
+        android:text="@string/Back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.173"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="224dp"
-        android:text="Income: "
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/netProfitValueP5S5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="284dp"
-        android:layout_marginTop="260dp"
-        android:text="RM300"
-        android:textAlignment="center"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.893" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
