@@ -182,7 +182,6 @@ public class SignUp extends AppCompatActivity {
                     System.out.println("Failed to send email. Response code: " + response.code());
                 }
 
-
             }
         });
 
