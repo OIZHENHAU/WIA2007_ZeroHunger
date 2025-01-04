@@ -59,42 +59,38 @@
 
     <Button
         android:id="@+id/buttonSignIn"
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginTop="484dp"
         android:text="Sign In"
+        app:cornerRadius="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <Button
         android:id="@+id/buttonSignUp"
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginStart="208dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginTop="484dp"
+        android:layout_marginTop="540dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:text="Sign Up"
+        app:cornerRadius="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonForgot"
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="540dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="595dp"
         android:text="I Forgot My Password"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/buttonLoginGoogleSignIn"
-        android:layout_width="400dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="596dp"
-        android:text="Sign In With Google"
+        app:cornerRadius="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -102,7 +98,7 @@
         android:id="@+id/textViewHomeInfoP1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="684dp"
         android:text="Comprehensive Solutions to Eradicate Hunger"
         android:textColor="@color/purple"

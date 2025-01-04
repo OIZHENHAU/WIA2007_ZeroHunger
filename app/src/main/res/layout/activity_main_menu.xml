@@ -23,7 +23,7 @@
             android:layout_height="?attr/actionBarSize"
             app:menu="@menu/profile_menu"
             app:navigationIcon="@drawable/arrow_back"
-            app:title="Home Page"
+            app:title="Zero Hunger"
             app:titleTextColor="@color/white">
 
 

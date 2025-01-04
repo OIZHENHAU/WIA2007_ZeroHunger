@@ -74,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
         signIn = findViewById(R.id.buttonSignIn);
         signUp = findViewById(R.id.buttonSignUp);
         forgotPassword = findViewById(R.id.buttonForgot);
-        signInGoogle = findViewById(R.id.buttonLoginGoogleSignIn);
 
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,12 +118,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        signInGoogle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //signInGoogle();
-            }
-        });
 
     }
 
