@@ -127,7 +127,12 @@ public class SignUp extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             try {
-                                sendEmail(userEmail, "Welcome to Zero Hunger", "Please verify your account");
+                                LocalDate signUpDate = LocalDate.now();
+                                sendEmail(userEmail, "Welcome to Zero Hunger",
+                                        "Welcome " + userName + "! Thank you for signing up for the WIA2007 Zero Hunger App. " +
+                                                "You have sign up for the WIA2007 Zero Hunger App at " + signUpDate.toString() +
+                                                "." + "As for a first users, you will receive a RM2000 bonus when you sign up." +
+                                                "If it wasn't you, pls ignore this email, else let's make the world a better place for zero hunger free!");
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }

@@ -13,6 +13,7 @@ import com.example.wia2007_zerohunger.R;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -103,7 +104,7 @@ public class P5_SavingsGuide4FMT extends AppCompatActivity {
         // Check if the savings target is achievable
         if (totalSavings >= savingsTarget) {
             achievableLabel.setText("Yes");
-            descriptionLabel.setText("Congratulations! You're on course of\nachieving your savings target!\nKeep it up and you'll edge\ncloser to the goal of\nSDG 2: Zero Hunger!");
+            descriptionLabel.setText(Html.fromHtml("Congratulations! You're on course of<br>achieving your savings target!<br>Keep it up and you'll edge<br>closer to the goal of<br>SDG 2: Zero Hunger!"));
             amountLabel.setText(""); // Clear the amount label
             amountDescription.setText(""); // Clear the amount description
         } else {
@@ -113,7 +114,7 @@ public class P5_SavingsGuide4FMT extends AppCompatActivity {
             if (additionalAmount <= 0) {
                 // If additionalAmount is zero or negative, the target is achievable
                 achievableLabel.setText("Yes");
-                descriptionLabel.setText("Congratulations! You're on course of\nachieving your savings target!\nKeep it up and you'll edge\ncloser to the goal of\nSDG 2: Zero Hunger!");
+                descriptionLabel.setText(Html.fromHtml("Congratulations! You're on course of<br>achieving your savings target!<br>Keep it up and you'll edge<br>closer to the goal of<br>SDG 2: Zero Hunger!"));
                 amountLabel.setText(""); // Clear the amount label
                 amountDescription.setText(""); // Clear the amount description
             } else {
