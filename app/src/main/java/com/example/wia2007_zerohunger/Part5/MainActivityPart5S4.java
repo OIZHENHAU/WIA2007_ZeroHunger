@@ -86,7 +86,6 @@ public class MainActivityPart5S4 extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(MainActivityPart5S4.this, "Donation has made.", Toast.LENGTH_SHORT).show();
                 updateNote(minUserAmount, minUserSlots, donationAmount, availableSlot, financialID, aidName, aidDateLine, imageID);
-
             }
         });
     }
@@ -116,16 +115,21 @@ public class MainActivityPart5S4 extends AppCompatActivity {
             @Override
             public void onChanged(UserAccount userAccount) {
                 double userAmount = userAccount.getAmount();
+                double totalDonation = minUserAmount * minUserSlots;
+                Log.d("minUserAmount", String.valueOf(minUserAmount));
+                Log.d("minUserSlots", String.valueOf(minUserSlots));
+                Log.d("totalDonation", String.valueOf(totalDonation));
 
-                if (userAmount >= minUserAmount) {
+                if (userAmount >= totalDonation) {
 
-                    double newAmount = userAmount - minUserAmount;
+                    double newAmount = userAmount - totalDonation;
 
                     if (newAmount < 0) {
                         userAccount.setAmount(0);
                         userAccountViewModel.update(userAccount);
                     } else {
                         userAccount.setAmount(newAmount);
+                        Log.d("newAmount", String.valueOf(newAmount));
                         userAccountViewModel.update(userAccount);
                     }
 
@@ -146,6 +150,7 @@ public class MainActivityPart5S4 extends AppCompatActivity {
                         intent.putExtra("isUpdated", 1);
                         setResult(RESULT_OK, intent);
                         startActivity(intent);
+                        finish();
                     }
 
                 } else {
