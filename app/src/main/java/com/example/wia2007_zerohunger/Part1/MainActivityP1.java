@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.wia2007_zerohunger.MainMenu;
 import com.example.wia2007_zerohunger.Part1.soil_analysis.MainSoilActivity;
+import com.example.wia2007_zerohunger.Part1.soil_analysis.SoilAnalysisActivity;
 import com.example.wia2007_zerohunger.Part1.view.MainWeatherActivity;
 import com.example.wia2007_zerohunger.R;
 import com.example.wia2007_zerohunger.UserDatabase.UserAccount;
@@ -70,7 +71,7 @@ public class MainActivityP1 extends AppCompatActivity {
         mainBinding.imageButtonSoilInfoP1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivityP1.this, MainSoilActivity.class);
+                Intent intent = new Intent(MainActivityP1.this, SoilAnalysisActivity.class);
                 startActivity(intent);
             }
         });

@@ -111,54 +111,24 @@ public class MainActivityPart5S4 extends AppCompatActivity {
         int donationAmountFinal = donationAmount;
         int availableSlotFinal = availableSlot;
 
-        userAccountViewModel.getUserAccountByEmail(currentEmail).observe(MainActivityPart5S4.this, new Observer<UserAccount>() {
-            @Override
-            public void onChanged(UserAccount userAccount) {
-                double userAmount = userAccount.getAmount();
-                double totalDonation = minUserAmount * minUserSlots;
-                Log.d("minUserAmount", String.valueOf(minUserAmount));
-                Log.d("minUserSlots", String.valueOf(minUserSlots));
-                Log.d("totalDonation", String.valueOf(totalDonation));
+        Log.d("donationAmountFinal", String.valueOf(donationAmountFinal));
+        Log.d("availableSlotFinal", String.valueOf(availableSlotFinal));
 
-                if (userAmount >= totalDonation) {
+        Intent intent = new Intent(MainActivityPart5S4.this, MainActivityPart5S2.class);
+        intent.putExtra("aidName", aidName);
+        intent.putExtra("donationAmount", donationAmountFinal);
+        intent.putExtra("availableSlot", availableSlotFinal);
+        intent.putExtra("financialID", financialID);
+        intent.putExtra("aidDateLine", aidDateLine);
+        intent.putExtra("imageID", imageID);
 
-                    double newAmount = userAmount - totalDonation;
-
-                    if (newAmount < 0) {
-                        userAccount.setAmount(0);
-                        userAccountViewModel.update(userAccount);
-                    } else {
-                        userAccount.setAmount(newAmount);
-                        Log.d("newAmount", String.valueOf(newAmount));
-                        userAccountViewModel.update(userAccount);
-                    }
-
-
-                    Log.d("donationAmountFinal", String.valueOf(donationAmountFinal));
-                    Log.d("availableSlotFinal", String.valueOf(availableSlotFinal));
-
-                    Intent intent = new Intent(MainActivityPart5S4.this, MainActivityPart5S2.class);
-                    intent.putExtra("aidName", aidName);
-                    intent.putExtra("donationAmount", donationAmountFinal);
-                    intent.putExtra("availableSlot", availableSlotFinal);
-                    intent.putExtra("financialID", financialID);
-                    intent.putExtra("aidDateLine", aidDateLine);
-                    intent.putExtra("imageID", imageID);
-
-                    if (financialID != -1) {
-                        intent.putExtra("noteId", financialID);
-                        intent.putExtra("isUpdated", 1);
-                        setResult(RESULT_OK, intent);
-                        startActivity(intent);
-                        finish();
-                    }
-
-                } else {
-                    Toast.makeText(MainActivityPart5S4.this, "Not enough money for donation.", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
+        if (financialID != -1) {
+            intent.putExtra("noteId", financialID);
+            intent.putExtra("isUpdated", 1);
+            setResult(RESULT_OK, intent);
+            startActivity(intent);
+            finish();
+        }
 
 
     }
