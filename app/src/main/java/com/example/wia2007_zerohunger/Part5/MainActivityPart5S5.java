@@ -29,7 +29,7 @@ public class MainActivityPart5S5 extends AppCompatActivity {
         Button insuranceCalculator = findViewById(R.id.insuranceButton);
         Button savingsGuide = findViewById(R.id.SavingsGuideButton);
         Button backButton = findViewById(R.id.backButton);
-
+        Button taxGuideButton = findViewById(R.id.TaxGuideButton);
 
 
         insuranceCalculator.setOnClickListener(new View.OnClickListener() {
@@ -46,6 +46,13 @@ public class MainActivityPart5S5 extends AppCompatActivity {
             }
         });
 
+        taxGuideButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivityPart5S5.this, P5_Tax1FMT.class);
+                startActivity(intent);
+            }
+        });
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override

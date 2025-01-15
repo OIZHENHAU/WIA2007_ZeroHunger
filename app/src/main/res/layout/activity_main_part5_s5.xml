@@ -59,34 +59,37 @@
 
     <Button
         android:id="@+id/insuranceButton"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
+        android:layout_width="175dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="@color/purple"
         android:textSize="16sp"
         app:cornerRadius="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/FMTHomepageView"
-        app:layout_constraintEnd_toEndOf="@+id/FMTHomepageView"
-        app:layout_constraintHorizontal_bias="0.897"
-        app:layout_constraintStart_toStartOf="@+id/FMTHomepageView"
-        app:layout_constraintTop_toBottomOf="@+id/ZeroHungerHubLogo"
-        app:layout_constraintVertical_bias="0.401"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TaxGuideButton"
         tools:contentDescription="Insurance Button" />
 
+
     <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleImageView"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="248dp"
-        android:layout_marginTop="420dp"
         android:src="@drawable/insurance"
         app:civ_border_color="@color/black"
         app:civ_border_width="2dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/insuranceText"
+        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintStart_toStartOf="@+id/insuranceButton"
+        app:layout_constraintTop_toTopOf="@+id/insuranceButton" />
 
     <TextView
         android:id="@+id/insuranceText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="15dp"
         android:text="@string/Insurance_Calculator"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
@@ -94,45 +97,43 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/insuranceButton"
         app:layout_constraintEnd_toEndOf="@+id/insuranceButton"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.763"
         app:layout_constraintStart_toStartOf="@+id/insuranceButton"
         app:layout_constraintTop_toTopOf="@+id/insuranceButton"
-        app:layout_constraintVertical_bias="0.9" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/SavingsGuideButton"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
+        android:layout_width="175dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="50dp"
         android:backgroundTint="@color/purple"
         android:textSize="16sp"
         app:cornerRadius="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/FMTHomepageView"
-        app:layout_constraintEnd_toEndOf="@+id/FMTHomepageView"
-        app:layout_constraintHorizontal_bias="0.102"
-        app:layout_constraintStart_toStartOf="@+id/FMTHomepageView"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ZeroHungerHubLogo"
-        app:layout_constraintVertical_bias="0.401"
         tools:contentDescription="Savings Guide Button" />
-
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/savingsGuideImgae"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="420dp"
         android:src="@drawable/saving_money"
         app:civ_border_color="@color/black"
+        android:layout_marginTop="15dp"
         app:civ_border_width="2dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/savingsGuideText"
+        app:layout_constraintHorizontal_bias="0.38"
+        app:layout_constraintStart_toStartOf="@+id/SavingsGuideButton"
+        app:layout_constraintTop_toTopOf="@+id/SavingsGuideButton" />
 
     <TextView
         android:id="@+id/savingsGuideText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginBottom="18dp"
         android:text="@string/Savings_Guide"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
@@ -141,6 +142,48 @@
         app:layout_constraintBottom_toBottomOf="@+id/SavingsGuideButton"
         app:layout_constraintEnd_toEndOf="@+id/SavingsGuideButton"
         app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintStart_toStartOf="@+id/SavingsGuideButton" />
+
+    <Button
+        android:id="@+id/TaxGuideButton"
+        android:layout_width="175dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/purple"
+        android:textSize="16sp"
+        app:cornerRadius="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SavingsGuideButton"
+        tools:contentDescription="Savings Guide Button" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/taxGuideImgae"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/tax_image"
+        app:civ_border_color="@color/black"
+        app:civ_border_width="2dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/taxGuideText"
+        app:layout_constraintHorizontal_bias="0.326"
+        app:layout_constraintStart_toStartOf="@+id/TaxGuideButton"
+        app:layout_constraintTop_toTopOf="@+id/TaxGuideButton" />
+
+    <TextView
+        android:id="@+id/taxGuideText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginBottom="18dp"
+        android:text="Tax\nGuide"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/TaxGuideButton"
+        app:layout_constraintEnd_toEndOf="@+id/SavingsGuideButton"
+        app:layout_constraintHorizontal_bias="0.458"
         app:layout_constraintStart_toStartOf="@+id/SavingsGuideButton" />
 
     <Button

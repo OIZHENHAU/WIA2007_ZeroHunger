@@ -27,6 +27,21 @@
         android:theme="@style/Theme.WIA2007_ZeroHunger"
         tools:targetApi="31">
         <activity
+            android:name=".Part5.P5_Tax5FMT"
+            android:exported="false" />
+        <activity
+            android:name=".Part5.P5_Tax4FMT"
+            android:exported="false" />
+        <activity
+            android:name=".Part5.P5_Tax3FMT"
+            android:exported="false" />
+        <activity
+            android:name=".Part5.P5_Tax2FMT"
+            android:exported="false" />
+        <activity
+            android:name=".Part5.P5_Tax1FMT"
+            android:exported="false" />
+        <activity
             android:name=".Part5.P5_SavingsGuide4FMT"
             android:exported="false" />
         <activity
